@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+<title>后台</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<!-- 基础框架样式 -->
+<link rel="stylesheet" href="lib/base.css" />
+<link rel="stylesheet" href="lib/gradient.css" />
+<script src='lib/jquery.js'></script>
+<script src="lib/base.js"></script>
+<!-- 自定义样式 -->
+<link rel="stylesheet" href="img/style.css" />
+<!-- 时间日历样式 -->
+<link rel="stylesheet" href="lib/datepicker.css" />
+<link rel="stylesheet" href="lib/datepicker.g.css" />
+<script src="lib/datepicker.js"></script>
+</head>
+<body>
+    
+<div class="ms-head">
+	<cite>
+		<a href="" class="ms-mess"><i class="uk-icon-envelope-o"></i><b>5</b></a>
+		<div style="display:inline;" data-uk-dropdown="{mode:'click'}" class="uk-button-dropdown ms-center"><a class="ms-user"><b><img src="img/t.jpg" alt=""></b> Niwashi <i class="uk-icon-angle-down"></i></a>
+			<div class="uk-dropdown">
+				<ul class="uk-nav uk-nav-dropdown">
+					<li><a href="#"><i class="uk-icon-user-md"></i> 个人中心</a></li>
+					<li><a href="#"><i class="uk-icon-calendar"></i> 查看日志</a></li>
+					<li><a href="#"><i class="uk-icon-comments-o"></i> 我的消息</a></li>
+					<li><a href="#"><i class="uk-icon-unlock-alt"></i> 权限管理</a></li>
+					<li class="uk-nav-divider"></li>
+					<li><a href="#"><i class="uk-icon-sign-out"></i> 退 出</a></li>
+				</ul>
+			</div>
+		</div>
+	
+		
+
+	</cite>
+	<i class="ms-logo">微站管理系统<b>v1.0</b></i></div>
+<table class="ms-box" width="100%">
+	<tbody>
+		<tr>
+			<td class="ms-box-le">
+				<div class="uk-panel uk-panel-box ms-nav">
+					<h2><a href=""><i class="uk-icon-home"></i> 管理首页</a></h2>
+					<ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-briefcase"></i> 基础服务</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-desktop"></i> 微网站</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-shopping-cart"></i> 微商城</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent uk-active">
+							<a href="#"><i class="uk-icon-signal"></i> 营销推广</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">优惠券</a></li>
+								<li><a href="">大转盘</a></li>
+								<li><a href="">刮刮卡</a></li>
+								<li><a href="">砸金蛋</a></li>
+								<li><a href="">一站到底</a></li>
+								<li><a href="">微渠道</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-users"></i> 客户管理</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-star-half-empty"></i> 行业模板</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-database"></i> 数据中心</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-briefcase"></i> 账号管理</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+						<li class="uk-parent">
+							<a href="#"><i class="uk-icon-gears"></i> 系统设置</a>
+							<ul class="uk-nav-sub">
+								<li><a href="">菜单一</a></li>
+								<li><a href="">菜单二</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</td>
+			<td class="ms-box-ri">
+				<h1><b>安泰投资管理</b><i>微渠道</i></h1>
+				<div class="ms-add"><i class="uk-icon-home"></i> <a href="">首 页</a> > <a href="">营销推广</a> > <span>微渠道</span></div>
+				<div class="ms-snav"><a href="">渠道计划</a> | <span>渠道类型</span> | <a href="">其他</a> | <a href="">其他二</a> | <a href="">其他三</a> | <a href="">其他四</a> | <a href="">其他五</a> | <a href="">其他六</a></div>
+				<div class="ms-tag">
+					<ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#ms-tag-arc'}">
+						<li><a href="">代付款</a></li>
+						<li><a href="">代发货</a></li>
+						<li><a href="">已发货</a></li>
+						<li><a href="">已关闭</a></li>
+					</ul>
+					<ul id="ms-tag-arc" class="uk-switcher">
+						<li>
+							<div class="ms-fun uk-form">
+								<select>
+									<option>类型一</option>
+									<option>类型二</option>
+								</select> <input type="text" placeholder="输入搜索内容"> 注册时间 <input type="text" data-uk-datepicker="{format:'YYYY.MM.DD'}"> 到 <input type="text" data-uk-datepicker="{format:'YYYY.MM.DD'}"> 等级： <select>
+									<option>等级一</option>
+									<option>等级二</option>
+								</select> <a class="uk-button" href="">搜 索</a> <a class="uk-button" href="">导出报表</a> <a class="uk-button" href="">添加会员</a>
+							</div>
+							<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed ms-list">
+								<thead>
+							 		<tr>
+										<th>会员编号</th>
+										<th>姓 名</th>
+										<th>手机号</th>
+										<th>积 分</th>
+										<th>等 级</th>
+										<th>性 别</th>
+										<th>年 龄</th>
+										<th>生 日</th>
+										<th class="ms-ri">操 作</th>
+							        </tr>
+								</thead>
+								<tbody>
+									<tr>
+							            <td>007</td>
+										<td>探月</td>
+										<td>1865185xxx3</td>
+										<td>100</td>
+										<td>铜牌等级</td>
+										<td>女</td>
+										<td>26</td>
+										<td>1984-08-02</td>
+										<td class="ms-ri"><a href="">商家信息</a> <a href="">积分明细</a> <a href="" class="red">锁 定</a></td>
+									</tr>
+									<tr>
+							            <td>007</td>
+										<td>探月</td>
+										<td>1865185xxx3</td>
+										<td>100</td>
+										<td>铜牌等级</td>
+										<td>女</td>
+										<td>26</td>
+										<td>1984-08-02</td>
+										<td class="ms-ri"><a href="">商家信息</a> <a href="">积分明细</a> <a href="" class="red">锁 定</a></td>
+									</tr>
+									<tr>
+							            <td>007</td>
+										<td>探月</td>
+										<td>1865185xxx3</td>
+										<td>100</td>
+										<td>铜牌等级</td>
+										<td>女</td>
+										<td>26</td>
+										<td>1984-08-02</td>
+										<td class="ms-ri"><a href="">商家信息</a> <a href="">积分明细</a> <a href="" class="red">锁 定</a></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="ms-page">
+								<ul class="uk-pagination">
+									<li><a href="">1</a></li>
+									<li class="uk-active"><span>2</span></li>
+									<li><span>...</span></li>
+									<li><a href="">4</a></li>
+								</ul>
+							</div>
+							<div class="uk-alert uk-alert-success ms-cue" data-uk-alert="">
+								<a href="" class="uk-alert-close uk-close"></a>
+								<p>温馨提示：上面代码如果看不懂的话，务必睁大眼睛再看！</p>
+							</div>
+							<div class="uk-alert uk-alert-warning ms-cue" data-uk-alert="">
+								<a href="" class="uk-alert-close uk-close"></a>
+								<p>温馨提示：如果上面的提示你还看不懂代码的话，请务必把脑子开到酷睿模式！</p>
+							</div>
+							<div class="uk-alert uk-alert-danger ms-cue" data-uk-alert="">
+								<a href="" class="uk-alert-close uk-close"></a>
+								<p>温馨提示：如果还看不懂，说明你的脑子已经块烧了，记得休息一下！</p>
+							</div>
+							<div class="ms-fun-a"><a class="uk-button" href=""><i class="uk-icon-file-text-o"></i> 文 字</a> <a class="uk-button" href=""><i class="uk-icon-file-pdf-o"></i> 图 文</a> <a class="uk-button" href=""><i class="uk-icon-file-image-o"></i> 图 片</a> <a class="uk-button" href=""><i class="uk-icon-microphone"></i> 语 音</a> <a class="uk-button" href=""><i class="uk-icon-file-movie-o"></i> 视 频</a></div>
+							<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed ms-table uk-form">
+								<tbody>
+									<tr>
+										<td class="ms-ri">铁牌等级：</td>
+										<td><select><option>金牌</option><option>银牌</option></select> <i>*</i></td>
+									</tr>
+									<tr>
+										<td class="ms-ri">优惠券名称：</td>
+										<td><input type="text" placeholder=""> <i>*</i></td>
+									</tr>
+									<tr>
+										<td class="ms-ri">优惠券名称颜色：</td>
+										<td><input type="text" placeholder=""> <i class="green">通过</i></td>
+									</tr>
+									<tr>
+										<td class="ms-ri">优惠券类型：</td>
+										<td><input type="text" placeholder=""></td>
+									</tr>
+									<tr>
+										<td class="ms-ri">关键词：</td>
+										<td><input type="text" placeholder=""></td>
+									</tr>
+									<tr>
+										<td class="ms-ri">分配领取条件：</td>
+										<td><input type="text" placeholder=""></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="ms-button"><a class="uk-button uk-button-primary" href="">保 存</a> <a class="uk-button" href="">取 消</a></div>
+						</li>
+						<li>内容二</li>
+						<li>内容三</li>
+						<li>内容四</li>
+					</ul>
+				</div>
+				<div class="uk-alert uk-alert-danger ms-cue ms-lib" data-uk-alert="">
+					<a href="" class="uk-alert-close uk-close"></a>
+					<p>这里的位置与上面不同，需要添加 <code>ms-lib</code> 样式，否则顶死top and left。</p>
+				</div>
+				<div class="ms-button ms-lib"><a class="uk-button uk-button-primary" href="">保 存</a> <a class="uk-button" href="">取 消</a> <a class="uk-button uk-button-danger" href="#ms-pop" data-uk-modal>我知道你很好奇，不过警告你还是别点</a></div>
+
+				<div id="ms-pop" class="uk-modal">
+					<div class="uk-modal-dialog">
+						<a class="uk-modal-close uk-close"></a>
+						<h2>添加系统用户信息</h2>
+						<table class="uk-table uk-table-hover uk-table-striped uk-table-condensed ms-pop-table uk-form">
+							<tbody>
+								<tr>
+									<td class="ms-ri">铁牌等级：</td>
+									<td><select><option>金牌</option><option>银牌</option></select> <i>*</i></td>
+								</tr>
+								<tr>
+									<td class="ms-ri">优惠券名称：</td>
+									<td><input type="text" placeholder=""> <i>*</i></td>
+								</tr>
+								<tr>
+									<td class="ms-ri">优惠券名称颜色：</td>
+									<td><input type="text" placeholder=""> <i class="green">通过</i></td>
+								</tr>
+								<tr>
+									<td class="ms-ri">日期：</td>
+									<td><input type="text" data-uk-datepicker="{format:'YYYY.MM.DD'}"></td>
+								</tr>
+								<tr>
+									<td class="ms-ri">关键词：</td>
+									<td><input type="text" placeholder=""></td>
+								</tr>
+								<tr>
+									<td class="ms-ri">分配领取条件：</td>
+									<td><input type="text" placeholder=""></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="ms-button"><a class="uk-button uk-button-primary" href="">保 存</a> <a class="uk-button" href="">取 消</a></div>
+					</div>
+				</div>
+			</td>
+		</tr> 
+	</tbody>
+</table>
+
+</body>
+</html>

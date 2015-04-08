@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html{
+            margin: 0;padding:0;
+        }
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+        <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="video">
+
+
+
+
+<div id="LegoVideoLayout" data-pkgname="lego" data-cptid="cp20771020085771495" data-cptname="video" data-appid="881131" data-plugid="video">
+    <div class="lego-title">
+        <span>视频</span>
+    </div>
+    <div class="lego-video-title">
+        <span><input type="text" placeholder="请输入标题" maxlength="16" value=""></span>
+        <!-- <span>0/16</span> -->
+    </div>
+    <div class="lego-video-source">
+        <textarea id="LegoVideoTextarea" placeholder="请输入网络视频通用代码，如：<embed src=&quot;http://player.video.qiyi.com/3f54ed77cf3601640735ddba28255589/0/0/w_19rsm7pfhh.swf-albumId=2443345609-tvId=2443345609-isPurchase=0-cnId=7&quot; allowFullScreen=&quot;true&quot; quality=&quot;high&quot; width=&quot;480&quot; height=&quot;350&quot; align=&quot;middle&quot; allowScriptAccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot;></embed>"></textarea>
+    </div>
+    <div class="lego-video-help">
+        <p>获取方法示例：<a href="javascript: void(0);">优酷</a></p>
+    </div>
+    <div class="lego-video-demo">
+        <img src="/cptlib/lego/video/images/youku-demo.png">
+    </div>
+    <div>
+        <div class="lego-save-btn" id="LegoVideoSave">保存</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.lego-video-help a').mouseover(function () {
+            $('.lego-video-demo').show();
+        }).mouseout(function () {
+            $('.lego-video-demo').hide();
+        })
+    })
+</script>
+<style type="text/css">
+.lego-title  {
+    margin-left: 0 !important;
+}
+.lego-video-demo {
+    display: none;
+}
+
+#LegoVideoTextarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    border: solid 1px #dfdfdf;
+    outline: none;
+    padding-left: 10px;
+}
+
+#LegoVideoLayout > div {
+    margin: 10px 15px;
+}
+
+.lego-video-title input {
+    width: 100%;
+    border: solid 1px #dfdfdf;
+    padding-left: 10px;
+}
+
+</style>
+
+
+
+
+<script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+<script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</body></html>

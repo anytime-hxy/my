@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc123", "Mvc123\Mvc123.csproj", "{A69BAA79-912E-4139-8AD6-0F52B5B1729D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A69BAA79-912E-4139-8AD6-0F52B5B1729D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69BAA79-912E-4139-8AD6-0F52B5B1729D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69BAA79-912E-4139-8AD6-0F52B5B1729D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69BAA79-912E-4139-8AD6-0F52B5B1729D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

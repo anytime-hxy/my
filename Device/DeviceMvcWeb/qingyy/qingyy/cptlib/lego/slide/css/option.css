@@ -1,0 +1,505 @@
+#lego-slide-info-wrap{
+    padding-bottom: 100px;
+}
+#lego-slide-info, .lego-slide-timeset-label{
+    font-size: 12px;
+    font-weight: bold;
+    color: #A4A9AE;
+    text-indent: 15px;
+}
+iframe{
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.lego-slide-container, #lego-slide-add, .lego-slide-timeset-con, #lego-slide-save{
+    margin: 14px;
+}
+.lego-slide-container{
+    margin: 0;
+}
+
+.lego-slide-item{
+    min-height: 87px;
+    padding-top: 13px;
+    border: dashed 1px white;
+    background-color: white;
+
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.lego-slide-item:first-child{
+    margin-top: 10px;
+}
+
+.lego-slide-typepic .lego-slide-item{
+    border-color: white;
+}
+.lego-slide-img{
+    width: 112px;
+    max-height: 90px;
+    /*min-height: 48px;
+    height: 90px;
+    */
+    height: 58px;
+    float: left;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    position: relative;
+    padding: 0 2px;
+}
+
+.lego-slide-img img{
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+.lego-slide-img img.lego-thumb-default{
+    
+}
+.lego-slide-addbtn{
+    position: absolute;
+    background: url(/cptlib/lego/slide/images/add-img-btn.png) center center no-repeat;
+    background-size: 20px;
+    width: 25px;
+    height: 26px;
+    top: 50%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -13px;
+}
+.lego-slide-addprocess{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('/cptlib/lego/slide/images/loading_bar.gif') no-repeat;
+    background-color: #020202;
+    opacity: .6;
+    background-position: center center;
+    text-align: center;
+    line-height: 235px;
+    color: #FFF;
+    font-size: 12px;
+}
+.lego-slide-img div.lego-thumb-default{
+
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    line-height: 89px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+}
+.lego-thumb-default.lego-slide-saved{
+    display: none;
+}
+
+.lego-slide-detail{
+    margin-left: 122px;
+    position: relative;
+}
+
+.lego-slide-detail .lego-content{
+    border-bottom: none;
+    line-height: 30px;
+    height: 30px;
+}
+.lego-slide-detail1 input{
+    width: 100%;
+    border: solid 1px #DFDFDF;
+    outline: blue;
+    text-indent: 7px;
+    font-size: 12px;
+    padding: 3px;
+    line-height: 19px;
+}
+.lego-slide-detail2{
+    margin-top: 5px;
+}
+.lego-slide-detail2 .lego-beautify-select{
+    width: 49%;
+}
+.lego-slide-detail2 .lego-select-list{
+    min-width: 111px;
+}
+.lego-slide-detail3{
+    min-height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.lego-slide-detail3 > div{
+    /*
+    float: right;
+    cursor: pointer;
+    background-color: #ccc;
+    color: white;
+    padding: 5px 30px;
+    font-size: 12px;
+    */
+    top: -4px;
+    right: -9px;
+}
+
+#lego-slide-add input, #lego-slide-save input, .lego-slide-netsubmit{
+    width: 100%;
+    height: 30px;
+    background-color: #5D9CEC;
+    color: #FFF;
+    border: none;
+    font-weight: bolder;
+}
+
+#lego-slide-add{
+    min-height: 25px;
+}
+#lego-slide-add div{
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+    text-align: right;
+    color: #5D9CEC;
+    font-weight: bolder;
+    font-size: 14px;
+    background: url('/cptlib/lego/slide/images/plus-icon.png') no-repeat;
+    padding-left: 22px;
+    background-position-y: center;
+}
+
+
+
+#lego-slide-save{
+    margin-top: 20px;
+}
+#lego-slide-save input{
+    height: 30px;
+}
+
+.lego-slide-timeset-con{
+    position: relative;
+    font-size: 12px;
+    color: #A4A9AE;
+}
+.lego-slide-timeset-sel{
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+/*
+.lego-slide-timeset-sel:after{
+    content: ""; 
+    position: absolute;
+    top: 11px;
+    right: 5px;
+    border: 5px solid rgba(0, 0, 0, 0);
+    border-top-color: #000;
+    border-bottom-width: 0;
+    pointer-events: none;
+}
+*/
+.lego-slide-timeset-sel select{
+    min-width: 6em;
+    max-width: 9em;
+    padding: 4px 17px 4px 4px;
+    border: 0;
+    -webkit-appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 12px;
+    color: #333;
+}
+
+.lego-slide-timeset-sel select>option{
+    padding: 10px;
+    text-indent: 12px;
+}
+
+#lego-slide-setting-mask{
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: .1;
+}
+
+#lego-slide-setting{
+    position: fixed;
+    background-color: white;
+    z-index: 2000;
+    display: none;
+    /*
+    border-radius: 5px;
+    */
+    -webkit-box-shadow: 0 0 8px #BDBDBD;
+    padding: 0 10px 20px 10px;
+    left: 13px;
+    right: 13px;
+    top: 130px;
+}
+
+
+
+.lego-slide-setinfo{
+    border-bottom: 1px solid #dfdfdf;
+    background-color: #f6f8fa;
+    line-height: 34px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-indent: 15px;
+    color: #71767b;
+    font-weight: bolder;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.lego-slide-setdel{
+
+    position: absolute;
+    right: 15px;
+    top: 11px;
+    cursor: pointer;
+    background: url('/cptlib/lego/slide/images/del.png') no-repeat; width: 14px;
+    height: 14px;
+}
+
+.lego-slide-from{
+    margin: 18px 5px;
+    font-size: 12px;
+}
+.lego-slide-from span{
+    border-right: 1px solid #a4a9ae;
+    padding: 0 13px;
+    display: inline-block;
+    cursor: pointer;
+    color: #a4a9ae;
+}
+.lego-slide-from span.chosed{
+    font-weight: bolder;
+    color: #5d9cec;
+}
+
+.lego-slide-from span:first-child{
+    padding-left: 0;
+}
+.lego-slide-from span:last-child{
+    border-right: none;
+}
+
+.lego-slide-fromset{
+    /*min-height: 200px;*/
+    margin: 0 5px;
+}
+.lego-slide-net, .lego-slide-db{
+    display: none;
+}
+
+.lego-slide-upload{
+    padding-top: 0px;
+}
+.lego-slide-upload input{
+    display: none;
+}
+.lego-slide-upload-div{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.lego-slide-upload-tip{
+    display: inline-block;
+    font-size: 12px;
+    color: #A4A9AE;
+}
+.lego-slide-upload-div, .lego-slide-op input{
+    height: 30px;
+    background-color: #5D9CEC;
+    color: #FFF;
+    border: none;
+    font-weight: bolder;
+    padding: 0 20px;
+}
+
+.lego-slide-preview{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #fff;
+    background: url('/cptlib/lego/slide/images/pic-icon.png') no-repeat;
+    background-size: contain;
+}
+
+.lego-slide-preview>div{
+    margin: 0 auto;
+}
+
+.lego-slide-preview img#lego-preview{
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lego-slide-preview #lego-slide-process-2-bg{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#lego-slide-process-2-bg img{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#lego-preview-wrap2{
+    background-image: none;
+    border-color: #ececec;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: none;
+}
+
+
+
+#lego-preview-wrap2.lego-slide-active .lego-slide-process{
+    display: none;
+}
+
+.lego-slide-preview.lego-slide-active{
+    background: #3d3d3d !important;
+}
+
+.lego-slide-process{
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('/cptlib/lego/slide/images/loading_bar.gif') no-repeat;
+    background-color: #020202;
+    opacity: .4;
+    background-position: center 45%;
+    text-align: center;
+    line-height: 185px;
+    color: #FFF;
+    font-size: 12px;
+    z-index: 9999;
+}
+
+#lego-slide-process-2{
+    display: block;
+    background: url(/cptlib/lego/slide/images/cur_preview.png) no-repeat;
+    background-position: center 41%;
+    background-color: #F6F9FD;
+    line-height: 200px;
+    color: #d0d4d9;
+    font-weight: bolder;
+}
+
+.lego-slide-op{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lego-slide-op input{
+    margin: 0 11px;
+    border-radius: 0px;
+}
+.lego-slide-opdel,
+.lego-slide-opdisable{
+    background-color: #d0d4d9 !important;
+}
+
+.lego-slide-opdis{
+    /*background-color: #d0d4d9 !important;*/
+}
+
+.lego-slide-net{
+    font-size: 12px;
+}
+.lego-slide-netlabel{
+    position: absolute;
+    min-width: 100px;
+    line-height: 26px;
+    color: #a4a9ae;
+}
+.lego-slide-netinput{
+    padding-left: 55px;
+    position: relative;
+    padding-right: 4px;
+}
+.lego-slide-netinput input{
+    width: 100%;
+    height: 28px;
+    border: 1px solid #DFDFDF;
+    outline: 0;
+    text-indent: 10px;
+    color: #000;
+}
+
+.lego-slide-netsubmit{
+    width: 100px;    
+    width: 53px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 28px;
+    text-align: center;
+    height: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.lego-nav-text{
+    width: 49%;
+}
+
+.lego-slide-local, .lego-slide-net{
+    min-height: 30px;
+    position: relative;
+}
+
+.lego-image-scale{
+    min-height: 20px;
+    margin-top: 16px;
+    margin-bottom: -6px;
+}
+
+.lego-image-scale .lgm-icon-selectWrap{
+    display: inline-block;
+}
+
+.lego-image-scaleItem{
+    margin-left: 23px;
+    margin-right: 17px;
+    color: #a4a9ae;
+    font-size: 13px;
+}
+
+.lego-image-scaleSlide{
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-bottom: 12px;
+}

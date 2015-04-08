@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<frameset rows="48px,*" frameborder="0">
+    <frame id="Top" src="@Url.Action("Top")" name="Top" noresize="noresize" scrolling="no" frameborder="0">
+    <frameset cols="240px,*" frameborder="0">
+        <frame id="Menu" src="@Url.Action("Menu")" name="Menu" noresize="noresize" scrolling="no" frameborder="0">
+        <!-- 可以设置任意一个存在的View作为默认首页。 -->
+        <frame id="Content" src="@Url.Action("About")" name="Content" noresize="noresize" scrolling="yes" frameborder="0">
+    </frameset>
+</frameset>
+</html>

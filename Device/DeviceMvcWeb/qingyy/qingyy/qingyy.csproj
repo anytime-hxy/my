@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8700A2CA-0284-4280-9200-D24165011FF5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>qingyy</RootNamespace>
+    <AssemblyName>qingyy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App Builder_files\applist.html.js" />
+    <Content Include="App Builder_files\app_manage.js" />
+    <Content Include="App Builder_files\base_8f63375.css" />
+    <Content Include="App Builder_files\bootstrap.min.js" />
+    <Content Include="App Builder_files\cell_model_95a0ef2.css" />
+    <Content Include="App Builder_files\common.css" />
+    <Content Include="App Builder_files\common.js" />
+    <Content Include="App Builder_files\cpt_icon_deb938b.png" />
+    <Content Include="App Builder_files\h.js" />
+    <Content Include="App Builder_files\homeimg.png" />
+    <Content Include="cptlib\lego\base\css\common.css" />
+    <Content Include="cptlib\lego\base\css\jcrop.css" />
+    <Content Include="cptlib\lego\base\css\option.css" />
+    <Content Include="cptlib\lego\base\css\page.css" />
+    <Content Include="cptlib\lego\base\css\ui-upload.css" />
+    <Content Include="cptlib\lego\base\images\cm-del-btn.png" />
+    <Content Include="cptlib\lego\base\images\cm-select.png" />
+    <Content Include="cptlib\lego\base\js\areaInfo.min.js" />
+    <Content Include="cptlib\lego\base\js\common.js" />
+    <Content Include="cptlib\lego\base\js\img-opt-main.js" />
+    <Content Include="cptlib\lego\base\js\imgcloud.js" />
+    <Content Include="cptlib\lego\base\js\jcrop.js" />
+    <Content Include="cptlib\lego\base\js\option.js" />
+    <Content Include="cptlib\lego\base\js\plupload.full.min.js" />
+    <Content Include="cptlib\lego\base\js\runtime-page.js" />
+    <Content Include="cptlib\lego\base\js\runtime.js" />
+    <Content Include="cptlib\lego\base\js\slider.js" />
+    <Content Include="cptlib\lego\base\js\timg-fix.js" />
+    <Content Include="cptlib\lego\base\js\ui-upload.js" />
+    <Content Include="cptlib\lego\base\js\zepto-cookie.js" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\default\images\icons.png" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="cptlib\lego\base\lib\ueditor\themes\iframe.css" />
+    <Content Include="cptlib\lego\base\lib\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="cptlib\lego\base\lib\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="cptlib\lego\base\lib\ueditor\ueditor.all.js" />
+    <Content Include="cptlib\lego\base\lib\ueditor\ueditor.config.js" />
+    <Content Include="cptlib\lego\base\lib\ui.core.js" />
+    <Content Include="cptlib\lego\base\lib\ui.sortable.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\dialogs\image\image.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\dialogs\link\link.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\dialogs\map\map.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\dialogs\video\video.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\themes\default\css\umeditor.min.css" />
+    <Content Include="cptlib\lego\base\lib\umeditor\themes\default\images\icons.png" />
+    <Content Include="cptlib\lego\base\lib\umeditor\umeditor.config.js" />
+    <Content Include="cptlib\lego\base\lib\umeditor\umeditor.js" />
+    <Content Include="cptlib\lego\contact\js\map.js" />
+    <Content Include="cptlib\lego\contact\js\option.js" />
+    <Content Include="cptlib\lego\cover1\images\cover-default-2.jpg" />
+    <Content Include="cptlib\lego\cover1\images\upload_icon.png" />
+    <Content Include="cptlib\lego\cover1\js\option.js" />
+    <Content Include="cptlib\lego\cover2\css\cover1option.css" />
+    <Content Include="cptlib\lego\cover2\css\imageOption.css" />
+    <Content Include="cptlib\lego\cover2\css\option.css" />
+    <Content Include="cptlib\lego\cover2\css\ui-link.css" />
+    <Content Include="cptlib\lego\cover2\images\add-img-btn.png" />
+    <Content Include="cptlib\lego\cover2\js\option.js" />
+    <Content Include="cptlib\lego\cover2\js\ui-link.js" />
+    <Content Include="cptlib\lego\cover3\css\cover1option.css" />
+    <Content Include="cptlib\lego\cover3\css\cover2option.css" />
+    <Content Include="cptlib\lego\cover3\css\option.css" />
+    <Content Include="cptlib\lego\cover3\css\ui-link.css" />
+    <Content Include="cptlib\lego\cover3\js\option.js" />
+    <Content Include="cptlib\lego\cover3\js\ui-link.js" />
+    <Content Include="cptlib\lego\cover5\css\cover1option.css" />
+    <Content Include="cptlib\lego\cover5\css\cover2option.css" />
+    <Content Include="cptlib\lego\cover5\css\option.css" />
+    <Content Include="cptlib\lego\cover5\css\ui-link.css" />
+    <Content Include="cptlib\lego\cover5\js\option.js" />
+    <Content Include="cptlib\lego\cover5\js\ui-link.js" />
+    <Content Include="cptlib\lego\form\css\main.css" />
+    <Content Include="cptlib\lego\form\js\option-main.js" />
+    <Content Include="cptlib\lego\gallery\css\option.css" />
+    <Content Include="cptlib\lego\gallery\js\option.js" />
+    <Content Include="cptlib\lego\gallery\js\page.js" />
+    <Content Include="cptlib\lego\list\css\page.css" />
+    <Content Include="cptlib\lego\list\images\img-space.png" />
+    <Content Include="cptlib\lego\lottery\js\common.js" />
+    <Content Include="cptlib\lego\map\images\map_link.png" />
+    <Content Include="cptlib\lego\map\js\option.js" />
+    <Content Include="cptlib\lego\map\js\useaddrjons.js" />
+    <Content Include="cptlib\lego\pic\css\option.css" />
+    <Content Include="cptlib\lego\pic\js\page.js" />
+    <Content Include="cptlib\lego\slide\css\option.css" />
+    <Content Include="editPage\HTML.html" />
+    <Content Include="editPage\分享.html" />
+    <Content Include="editPage\封面三.html" />
+    <Content Include="editPage\封面二.html" />
+    <Content Include="editPage\封面一.html" />
+    <Content Include="editPage\通讯录.html" />
+    <Content Include="editPage\留言板.html" />
+    <Content Include="editPage\抽奖.html" />
+    <Content Include="editPage\地图.html" />
+    <Content Include="editPage\短信.html" />
+    <Content Include="editPage\电话.html" />
+    <Content Include="editPage\按钮.html" />
+    <Content Include="editPage\链接.html" />
+    <Content Include="editPage\表格.html" />
+    <Content Include="editPage\文章列表.html" />
+    <Content Include="editPage\标题.html" />
+    <Content Include="editPage\视频.html" />
+    <Content Include="editPage\图片.html" />
+    <Content Include="editPage\图集.html" />
+    <Content Include="editPage\导航.html" />
+    <Content Include="editPage\幻灯片.html" />
+    <Content Include="App Builder_files\imgcloud.js" />
+    <Content Include="App Builder_files\index%281%29.html" />
+    <Content Include="App Builder_files\index%282%29.html" />
+    <Content Include="App Builder_files\index%283%29.html" />
+    <Content Include="App Builder_files\index%284%29.html" />
+    <Content Include="App Builder_files\index%285%29.html" />
+    <Content Include="App Builder_files\index.html" />
+    <Content Include="App Builder_files\jcrop.css" />
+    <Content Include="App Builder_files\jcrop.js" />
+    <Content Include="App Builder_files\jquery-1.10.1.js" />
+    <Content Include="App Builder_files\jquery-1.7.1.min_229476e.js" />
+    <Content Include="App Builder_files\jquery.min.js" />
+    <Content Include="App Builder_files\jquery.qrcode_aca229c.js" />
+    <Content Include="App Builder_files\kaifangyun.js" />
+    <Content Include="App Builder_files\lego_icon_d5b6388.png" />
+    <Content Include="App Builder_files\qing.html" />
+    <Content Include="App Builder_files\lego_panel_29fb772.js" />
+    <Content Include="App Builder_files\lego_panel_b3e86d0.css" />
+    <Content Include="App Builder_files\lightapp.js" />
+    <Content Include="App Builder_files\lightapp_builder.js" />
+    <Content Include="App Builder_files\mobile_device_688f35e.png" />
+    <Content Include="App Builder_files\option%281%29.css" />
+    <Content Include="App Builder_files\option%282%29.js" />
+    <Content Include="App Builder_files\option.css" />
+    <Content Include="App Builder_files\option.js" />
+    <Content Include="App Builder_files\page%281%29.css" />
+    <Content Include="App Builder_files\page.css" />
+    <Content Include="App Builder_files\page.js" />
+    <Content Include="App Builder_files\plupload.full.min.js" />
+    <Content Include="App Builder_files\qrcode_d78d6c7.js" />
+    <Content Include="App Builder_files\runtime-page.js" />
+    <Content Include="App Builder_files\runtime.js" />
+    <Content Include="App Builder_files\selected_bg_c45996a.png" />
+    <Content Include="App Builder_files\timg-fix.js" />
+    <Content Include="App Builder_files\u%281%29.gif" />
+    <Content Include="App Builder_files\u%282%29.gif" />
+    <Content Include="App Builder_files\u%283%29.gif" />
+    <Content Include="App Builder_files\u%284%29.gif" />
+    <Content Include="App Builder_files\u%285%29.gif" />
+    <Content Include="App Builder_files\u%286%29.gif" />
+    <Content Include="App Builder_files\u%287%29.gif" />
+    <Content Include="App Builder_files\u.gif" />
+    <Content Include="App Builder_files\ui-upload.css" />
+    <Content Include="App Builder_files\ui-upload.js" />
+    <Content Include="App Builder_files\ui.core_3832898.js" />
+    <Content Include="App Builder_files\ui.draggable_2b8b8d1.js" />
+    <Content Include="App Builder_files\ui.droppable_b6f8a47.js" />
+    <Content Include="App Builder_files\ui.sortable_2784b4f.js" />
+    <Content Include="App Builder_files\wpo.mpda.js" />
+    <Content Include="App Builder_files\zepto-cookie.js" />
+    <Content Include="App Builder_files\zepto.min.js" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="editPage\文本.html" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App Builder_files\timg" />
+    <Content Include="App Builder_files\timg%281%29" />
+    <Content Include="App Builder_files\timg%282%29" />
+    <Content Include="App Builder_files\timg%283%29" />
+    <Content Include="App Builder_files\timg%284%29" />
+    <Content Include="App Builder_files\topbar" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3786/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

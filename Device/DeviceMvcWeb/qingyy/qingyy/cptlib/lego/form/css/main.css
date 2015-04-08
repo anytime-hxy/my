@@ -1,0 +1,189 @@
+/* for rest */
+
+body, div, table, input, textarea {
+	margin: 0;
+	padding: 0;
+	color: #a4a9ae;
+	font-size: 12px;
+}
+a{
+	color: black;
+}
+
+.lego-form-info{
+	line-height: 40px;
+	padding-left: 16px; 
+	border-bottom: 1px solid #dfdfdf;
+	font-weight: bolder;
+}
+
+#lego-form-name{
+	padding: 8px 16px;
+	line-height: 40px;
+	position: relative;
+	/*border-bottom: 1px solid #dfdfdf;*/
+}
+.lego-form-name1{
+	position: absolute;
+	min-width: 100px;
+}
+.lego-form-name2{
+	padding-left: 58px;
+	position: relative;
+}
+input.lego-form-name, input.lego-form-comment{
+	width: 100%;
+	height: 26px;
+	border: 1px solid #dfdfdf;
+	outline: 0;
+	text-indent: 10px;
+	color: black;
+}
+.lego-form-name3{
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	font-size: 14px;
+}
+
+.lego-form-name1-com{
+    letter-spacing: 6px;
+}
+
+.lego-form-item{
+	padding: 0 16px;
+    /*
+	border-bottom: 1px solid #dfdfdf;
+	min-height: 50px;
+    */
+    position: relative;
+}
+.lego-form-item-key{
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    font-size: 14px;
+}
+.lego-form-item-con > div{
+	position: relative;
+	margin: 10px 0;
+}
+
+.lego-form-item-con {
+    /*margin-left: 60px;
+    margin-left: 30px;*/
+}
+.lego-form-itinput, .lego-form-itoption{
+	padding-right: 70px;
+    
+    padding-right: 0;
+}
+.lego-form-itinput{
+	height: 30px;
+    width: 155px;
+}
+.lego-form-itop, .lego-form-itinput{
+    display: inline-block;
+    position: relative; 
+}
+.lego-form-itop{
+    margin-left: 11px;
+}
+.lego-form-itop select{
+    min-width: 5em;
+    padding: 2px 13px 2px 4px;
+}
+.lego-form-itoption{
+}
+.lego-form-itinput input{
+	width: 100%;
+	height: 26px;
+	border: 1px solid #dfdfdf;
+	outline: 0;
+	text-indent: 10px;
+	color: black;
+}
+.lego-form-key-size{
+    right: 4px;
+    top: 6px;
+}
+.lego-form-itcheck, .lego-form-itdel{
+	position: absolute;
+	right: 0;
+	right: 23px;
+	top: 8px;
+}
+.lego-form-itdel{
+	top: 0;
+}
+
+input.lego-form-keycheck{
+	margin-right: 5px;
+	margin-top: 1px;
+	border: none;
+	outline: none;
+	vertical-align: top;
+}
+
+.lego-form-del{
+	border: none;
+	background-color: #FFF;
+    background-image: url(/cptlib/lego/form/images/del.png);
+	background-repeat: no-repeat;
+	min-width: 13px;
+    height: 13px;
+    background-size: contain;
+    cursor: pointer;
+}
+.lego-form-itoption label{
+	margin-right: 40px;
+}
+.lego-form-itoption label input{
+	margin-right: 5px;
+}
+
+#lego-form-add, .lego-form-save{
+	padding: 16px;
+}
+input.lego-form-add,  input.lego-form-submit{
+	width: 100%;
+	height: 30px;
+	background-color: #5d9cec;
+	color: white;
+	border: none;
+	font-weight: bolder;
+    font-size: 14px;
+}
+
+.lego-form-save{
+}
+input.lego-form-submit{
+    height: 30px;
+}
+
+div.lego-form-add{
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+    text-align: right;
+    color: #5d9cec;
+    font-weight: bolder;
+    font-size: 14px;
+    background: url('/cptlib/lego/form/images/plus-icon.png') no-repeat;
+    padding-left: 22px;
+    background-position-y: center;
+    
+}
+
+.lego-form-noadd{
+    /*
+    color: #c0c0c0 !important;
+    */
+}
+
+.lego-form-error{
+    border-color: #D73329 !important;
+}
+.lego-form-isin{
+    border-color: #5D9CEC !important;
+}

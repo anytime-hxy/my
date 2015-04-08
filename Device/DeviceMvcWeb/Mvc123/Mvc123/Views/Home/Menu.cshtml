@@ -1,0 +1,107 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Menu</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+    <!-- 基础框架样式 -->
+    <link rel="stylesheet" href="/lib/base.css" />
+    <link rel="stylesheet" href="/lib/gradient.css" />
+    <script src='/lib/jquery.js'></script>
+    <script src="/lib/base.js"></script>
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="/img/style.css" />
+    <!-- 时间日历样式 -->
+    <link rel="stylesheet" href="/lib/datepicker.css" />
+    <link rel="stylesheet" href="/lib/datepicker.g.css" />
+    <script src="/lib/datepicker.js"></script>
+</head>
+<body>
+    <table class="ms-box" width="100%">
+        <tbody>
+            <tr>
+                <td class="ms-box-le">
+                    <div class="uk-panel uk-panel-box ms-nav">
+                        <h2><a href=""><i class="uk-icon-home"></i>管理首页</a></h2>
+                        <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-briefcase"></i>基础服务</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-desktop"></i>微网站</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-shopping-cart"></i>微商城</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent uk-active">
+                                <a href="#"><i class="uk-icon-signal"></i>营销推广</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="@Url.Action("Top")" target="Content">优惠券</a></li>
+                                    <li><a href="">大转盘</a></li>
+                                    <li><a href="">刮刮卡</a></li>
+                                    <li><a href="">砸金蛋</a></li>
+                                    <li><a href="">一站到底</a></li>
+                                    <li><a href="">微渠道</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-users"></i>客户管理</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-star-half-empty"></i>行业模板</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-database"></i>数据中心</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-briefcase"></i>账号管理</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-parent">
+                                <a href="#"><i class="uk-icon-gears"></i>系统设置</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="">菜单一</a></li>
+                                    <li><a href="">菜单二</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

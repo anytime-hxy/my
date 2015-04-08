@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html{
+            margin: 0;padding:0;
+        }
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+        <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <link href="/cptlib/lego/base/css/common.css?t=0519" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0519" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="pic">
+
+
+<link rel="stylesheet" type="text/css" href="/cptlib/lego/pic/css/option.css?t=0519">
+<link rel="stylesheet" type="text/css" href="/cptlib/lego/base/css/jcrop.css">
+
+
+    <div id="lego-slide-info-wrap">
+    <div id="lego-slide-info" class="lego-title" data-appid="881131" data-pkgname="lego" data-plugid="pl0" data-cptid="cp20621381867019520" data-cptname="pic" data-token="agU*gR9PX30M6N5vG-4zhDtE1QG6KV1kEOlfwt0ypNk4ISO6">
+    图片信息
+    </div>
+    <div class="lego-slide-container lego-slide-typepic" id="LegoSlideContainer">
+
+    
+            <div class="lego-slide-item lego-common-blockitem" data-key="1" data-img_bcs_src="" data-img_timg_src="" data-img_from="net" data-isdefault="1" data-img_thumb_src="" data-img_select_scale="1.777777">
+    
+    <div class="lego-slide-img">
+            <img class="lego-slide-thumb lego-thumb-default lego-common-img" alt="">
+        <div class="lego-thumb-default">
+            <div class="lego-slide-addbtn"></div>
+        </div>
+        <div class="lego-slide-addprocess"></div>
+        </div>
+
+    <div class="lego-slide-detail">
+        <div class="lego-slide-detail1">
+            <input type="text" name="xx" data-min="0" data-max="16" value="" class="lego-slide-imgname lego-common-input" placeholder="输入图片名称">
+        </div>
+        <div class="lego-slide-detail2">
+        <div class="lego-content lego-nav-onenav">
+    <div class="lego-beautify-select lego-nav-typediv">
+        <span class="lego-select-text lego-nav-type" data="">
+                        站内链接
+                    </span>
+        <span class="lego-select-btn lego-nav-typeselectbtn">
+            <i class="lego-select-icon"></i>
+        </span>
+        <ul class="lego-select-list lego-nav-typeselectlist" style="display: none;">
+            <li data="inner">站内链接</li>
+            <li data="outer">站外链接</li>
+        </ul>
+    </div>
+
+    <!--站内链接选择 -->
+    <div class="lego-beautify-select lego-nav-pagediv" style="">
+                <span class="lego-select-text lego-nav-page" data="">
+                   链接页面        </span>
+        <span class="lego-select-btn lego-nav-pageselectbtn">
+            <i class="lego-select-icon"></i>
+        </span>
+        <ul class="lego-select-list lego-nav-pageselectlist" style="display: none">
+            <li class="lgm-nav-newpage">新建页面</li>
+                            <li data-pageid="pg19762301953051776">培训课程</li>
+                            <li data-pageid="pg19762301899476939">站点首页</li>
+                            <li data-pageid="pg19762301920606190">机构介绍</li>
+                            <li data-pageid="pg19762301973198199">教师团队</li>
+            
+        </ul>
+    </div>
+
+    <!-- 站外链接选择-->
+    <input type="text" class="lego-val lego-nav-item lego-nav-text" style="display:none" value="">
+
+</div>
+        </div>
+    </div>
+    </div>
+    
+    </div>
+
+    <div id="lego-slide-save">
+    <input type="button" value="保存">
+    </div>
+    </div>
+    
+
+    <div id="lego-slide-setting-mask">
+    </div>
+    <div id="lego-slide-setting">
+    <div class="lego-slide-setinfo">添加图片</div>
+    <div class="lego-slide-setdel">&nbsp;</div>
+
+    <div class="lego-slide-from">
+        <span data-from="local" class="chosed">本地图片</span>
+        <span data-from="net">网址获取</span>
+    </div>
+
+    <iframe name="lego-form-iframe"></iframe>
+
+    <form target="lego-form-iframe" enctype="multipart/form-data" method="POST" action="?control=option&amp;caction=upload&amp;token=agU*gR9PX30M6N5vG-4zhDtE1QG6KV1kEOlfwt0ypNk4ISO6">
+        <div class="lego-slide-fromset">
+        <input type="hidden" id="lego-from-set" name="from" value="local">
+        <div class="lego-slide-local">
+        <div class="lego-slide-upload">
+        <input type="file" id="lego-file" name="up-file" accept="image/jpeg,image/png,image/jpg" value="上传图片">
+        <div class="lego-slide-upload-div">选择图片</div>
+        <div class="lego-slide-upload-tip">大小需小于1M，建议尺寸640x320</div>
+        <input type="hidden" id="lego-file-store" name="store-file" value="">
+        <input type="hidden" id="lego-file-scale" name="up-file-scale" value="1">
+        <input type="hidden" id="image-scale" name="select-scale" value="1.777777">
+        <input type="hidden" id="lego-file-x" name="up-file-x" value="0">
+        <input type="hidden" id="lego-file-y" name="up-file-y" value="0">
+        <input type="hidden" id="lego-file-w" name="up-file-w" value="320">
+        <input type="hidden" id="lego-file-h" name="up-file-h" value="150">
+        <input type="hidden" id="lego-file-x2" name="up-file-x2" value="320">
+        <input type="hidden" id="lego-file-y2" name="up-file-y2" value="150">
+        <input type="hidden" name="cptid" value="cp20621381867019520">
+        <input type="hidden" name="plugid" value="pl0">
+        <input type="hidden" name="pkg" value="lego">
+        <input type="hidden" name="cptname" value="pic">
+        </div>
+        </div>
+        <div class="lego-slide-net">
+        <div class="lego-slide-netlabel">图片地址</div>
+        <div class="lego-slide-netinput"><input type="text" id="lego-slide-netinput" class="lego-common-input" name="net-address" autocomplete="off"></div>
+        <div class="lego-slide-netsubmit">确定</div>
+        </div>
+
+        <div class="lego-image-scale">
+
+           <div class="lgm-icon-selectWrap lgm-icon-selected" data-scale="1.777777">
+            <div class="lgm-icon-selectIcon">
+                <div class="lgm-icon-selectMin"></div>
+            </div>
+            <div class="lego-image-scaleItem">16:9</div>
+           </div>
+
+           <div class="lgm-icon-selectWrap" data-scale="1.333333">
+            <div class="lgm-icon-selectIcon">
+                <div class="lgm-icon-selectMin"></div>
+            </div>
+            <div class="lego-image-scaleItem">4:3</div>
+           </div>
+           <div class="lgm-icon-selectWrap" data-scale="1">
+            <div class="lgm-icon-selectIcon">
+                <div class="lgm-icon-selectMin"></div>
+            </div>
+            <div class="lego-image-scaleItem">1:1</div>
+           </div>
+           <div class="lgm-icon-selectWrap" data-scale="0">
+            <div class="lgm-icon-selectIcon">
+                <div class="lgm-icon-selectMin"></div>
+            </div>
+            <div class="lego-image-scaleItem">任意比例</div>
+           </div>
+        </div>
+
+        <div class="lego-slide-preview" id="lego-preview-wrap1">
+            <div>
+                <img id="lego-preview">
+            </div>
+            <div class="lego-slide-process" id="lego-slide-process-1">
+            上传中
+            </div>
+        </div>
+
+        </div>
+        <div class="lego-slide-op">
+            <input type="button" class="lego-slide-opsave" value="上传">
+            <input type="button" class="lego-slide-opdel lego-slide-opdis" value="取消">
+        </div>
+    </form>
+
+    </div>
+
+
+
+    <script src="/cptlib/lego/base/js/jcrop.js"></script>
+    <script src="/cptlib/lego/base/js/img-opt-main.js?t=0519"></script>
+
+
+<script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0519"></script>
+<script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0519"></script>
+
+</body></html>

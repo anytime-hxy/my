@@ -1,0 +1,15 @@
+D:\TFS_WeiSite\DeviceWeb\DeviceWeb\bin\DeviceWeb.dll
+D:\TFS_WeiSite\DeviceWeb\DeviceWeb\bin\DeviceWeb.pdb
+D:\TFS_WeiSite\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.csprojResolveAssemblyReference.cache
+D:\TFS_WeiSite\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.dll
+D:\TFS_WeiSite\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.pdb
+F:\Device\DeviceWeb\DeviceWeb\bin\DeviceWeb.dll
+F:\Device\DeviceWeb\DeviceWeb\bin\DeviceWeb.pdb
+F:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.csprojResolveAssemblyReference.cache
+F:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.dll
+F:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.pdb
+D:\Device\DeviceWeb\DeviceWeb\bin\DeviceWeb.dll
+D:\Device\DeviceWeb\DeviceWeb\bin\DeviceWeb.pdb
+D:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.dll
+D:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.pdb
+D:\Device\DeviceWeb\DeviceWeb\obj\Debug\DeviceWeb.csprojResolveAssemblyReference.cache

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>09/17/2014 15:01:16</publishTime>
+    </File>
+    <File Include="bin/DeviceWeb.dll">
+      <publishTime>09/22/2014 09:56:31</publishTime>
+    </File>
+    <File Include="bin/DeviceWeb.pdb">
+      <publishTime>09/22/2014 09:56:31</publishTime>
+    </File>
+    <File Include="Device.accdb">
+      <publishTime>09/22/2014 09:56:17</publishTime>
+    </File>
+    <File Include="img/banner.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/jquery-1.11.0.js">
+      <publishTime>09/17/2014 12:38:13</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/map.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/map01.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/p01.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/p02.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/p03.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/p04.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/pic001.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/pic01.jpg">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/search.png">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="img/style.css">
+      <publishTime>09/16/2014 15:30:11</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>09/17/2014 15:01:22</publishTime>
+    </File>
+    <File Include="jquery-1.11.0.js">
+      <publishTime>09/17/2014 12:38:13</publishTime>
+    </File>
+    <File Include="Product.aspx">
+      <publishTime>09/22/2014 09:58:54</publishTime>
+    </File>
+    <File Include="Product1.aspx">
+      <publishTime>09/17/2014 14:49:26</publishTime>
+    </File>
+    <File Include="Product2.aspx">
+      <publishTime>09/17/2014 15:02:12</publishTime>
+    </File>
+    <File Include="Search.aspx">
+      <publishTime>09/22/2014 09:58:33</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/22/2014 09:59:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="message">
+
+
+
+
+    <div class="lego-layout lego-message-layout" id="LegoMessageLayout" data-pkgname="lego" data-cptid="cp20774976307253478" data-cptname="message" data-appid="881131" data-plugid="pl0">
+        <form id="LegoMessageForm">
+            <div class="lego-title">
+                <span>短信信息</span>
+            </div>
+            <div class="lego-content lego-outer-line">
+                <span>短信号码<em>*</em></span>
+                <input type="text" class="lego-val" id="LegoMessageVal" value="">
+            </div>
+            <div class="lego-content lego-outer-line">
+                <span class="lego-tel-label-tip">自定义标签<em></em></span>
+                <input type="text" data-min="0" data-max="10" class="lego-val lego-tel-label lego-common-input" id="LegoMessageLabel" value="" placeholder="如：点击发短信给我们">
+            </div>
+            <div class="lego-tel-tip">
+                <p>短信号码格式139-0000-0000</p>
+            </div>
+            <div>
+                <div class="lego-save-btn" id="LegoMessageSave">保存</div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+    <script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+        <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="map">
+
+
+
+
+<div id="LegoMapLayout" data-pkgname="lego" data-cptid="cp20775250366653887" data-cptname="map" data-appid="881131" data-plugid="pl0">
+
+    <div class="lego-title">
+        <span>地图信息</span>
+    </div>
+<div class="lego-outer-line">
+    <div class="lego-content">
+        <span>位置名称<em>*</em></span>
+        <input class="lego-val" id="addrName" type="text" value="">
+    </div>
+    <div class="lego-content">
+        <span>所在区域<em>&nbsp;</em></span>
+
+        <select id="contactP_0" class="lego-map-select">
+            <option value="">选择省份</option>
+            <option value="北京市">北京市</option>
+            <option value="天津市">天津市</option>
+            <option value="河北省">河北省</option>
+            <option value="山西省">山西省</option>
+            <option value="辽宁省">辽宁省</option>
+            <option value="吉林省">吉林省</option>
+            <option value="上海市">上海市</option>
+            <option value="江苏省">江苏省</option>
+            <option value="浙江省">浙江省</option>
+            <option value="安徽省">安徽省</option>
+            <option value="福建省">福建省</option>
+            <option value="江西省">江西省</option>
+            <option value="山东省">山东省</option>
+            <option value="河南省">河南省</option>
+            <option value="内蒙古自治区">内蒙古自治区</option>
+            <option value="黑龙江省">黑龙江省</option>
+            <option value="湖北省">湖北省</option>
+            <option value="湖南省">湖南省</option>
+            <option value="广东省">广东省</option>
+            <option value="广西壮族自治区">广西壮族自治区</option>
+            <option value="海南省">海南省</option>
+            <option value="四川省">四川省</option>
+            <option value="重庆市">重庆市</option>
+            <option value="台湾省">台湾省</option>
+            <option value="贵州省">贵州省</option>
+            <option value="云南省">云南省</option>
+            <option value="西藏自治区">西藏自治区</option>
+            <option value="陕西省">陕西省</option>
+            <option value="甘肃省">甘肃省</option>
+            <option value="青海省">青海省</option>
+            <option value="宁夏回族自治区">宁夏回族自治区</option>
+            <option value="新疆维吾尔族自治区">新疆维吾尔族自治区</option>
+            <option value="香港特别行政区">香港特别行政区</option>
+            <option value="澳门特别行政区">澳门特别行政区</option>
+            <option value="海外">海外</option>
+        </select>
+        <select id="contactC_0" class="lego-map-select"><option value="">选择市</option><option value="南京市">南京市</option><option value="徐州市">徐州市</option><option value="连云港市">连云港市</option><option value="宿迁市">宿迁市</option><option value="淮安市">淮安市</option><option value="盐城市">盐城市</option><option value="扬州市">扬州市</option><option value="泰州市">泰州市</option><option value="南通市">南通市</option><option value="镇江市">镇江市</option><option value="常州市">常州市</option><option value="无锡市">无锡市</option><option value="苏州市">苏州市</option><option value="其它地区">其它地区</option><option value="淮安市">淮安市</option></select>
+        <select id="contactA_0" class="lego-map-select"><option value="">选择区</option><option value="高淳">高淳</option><option value="溧水">溧水</option><option value="六合">六合</option><option value="江宁">江宁</option><option value="雨花台">雨花台</option><option value="栖霞">栖霞</option><option value="浦口">浦口</option><option value="下关">下关</option><option value="鼓楼">鼓楼</option><option value="建邺">建邺</option><option value="秦淮">秦淮</option><option value="白下">白下</option><option value="玄武">玄武</option></select>
+        <input type="hidden" class="hidden" value="北京市@|海淀区@|上地街道@|上地十街@|百度大厦" id="contactReg_0">
+
+    </div>
+    <div class="lego-content">
+        <span>街道地址<em>*</em></span>
+        <input class="lego-val" id="streeName" type="text" value="">
+    </div>
+    <div style="margin:10px auto">
+        <a href="#" class="lego-map-link toshowMap">重新定位地图</a>
+        <span class="senErro" style="color:red;font-size:12px"></span>
+    </div>
+</div>
+
+    <div class="lego-title">
+        <span>展示样式</span>
+    </div>
+    <div class="lego-outer-line lego-outer-hover">
+    <div class="lego-content lego-map-style">
+        <div class="lego-map-style-box selected">
+            <label>
+                <input type="radio" name="map_style" value="pic" checked="checked">
+                <span>页面嵌入</span>
+            </label>
+            <div class="lego-map-style-pic style-pic"></div>
+        </div>
+        <div class="lego-map-style-box">
+            <label>
+                <input type="radio" name="map_style" value="icon" checked="checked">
+                <span>直接访问</span>
+            </label>
+            <div class="lego-map-style-pic style-icon"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="tip_cover" style="display: none; width: 100%; height: 498px;">
+        <div class="incloudMap" style="display: none;">
+            <div id="map" style="overflow: hidden; position: relative; z-index: 0; color: rgb(0, 0, 0); text-align: left; background-color: rgb(243, 241, 236);"><div style="overflow: visible; position: absolute; z-index: 0; left: 14px; top: 0px; cursor: url(http://api.map.baidu.com/images/openhand.cur) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: -14px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 353px; height: 512px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"><div class="BMap_pop" style="position: absolute; cursor: default; left: 68px; top: 129px;"><div style="overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 0px; width: 25px; height: 25px;"><div style="background:#fff;border-top:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_top" style="overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 0px; width: 202px; height: 25px;"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 227px; top: 0px; width: 25px; height: 25px;"><div style="position:absolute;top:0;left:-6px;background:#fff;border-top:1px solid #ababab;border-right:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_center" style="overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 25px; width: 250px; height: 53px;"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 78px; width: 25px; height: 25px;"><div style="position:absolute;top:-6px;left:0;background:#fff;border-bottom:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_bottom" style="overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 78px; width: 202px; height: 24px;"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 227px; top: 78px; width: 25px; height: 25px;"><div style="position:absolute;top:-6px;left:-6px;background:#fff;border-right:1px solid #ababab;border-bottom:1px solid #ababab;width:30px;height:30px;"></div></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 109px; top: 78px; width: 34px; height: 50px;"><img style="border:none;margin:0px;padding:0px;position:absolute;left:-186px;top:-691px;width:690px;height:786px;" src="http://api.map.baidu.com/images/iw3.png"></div><div style="width: 220px; height: 71px; position: absolute; left: 16px; top: 16px; z-index: 10; overflow: hidden;"><div class="BMap_bubble_title" style="display: none; overflow: hidden; height: auto; line-height: 24px; white-space: nowrap; width: auto;"></div><div class="BMap_bubble_content" style="width: auto; height: auto;"><h4 style="margin:0 0 5px 0;padding:0.2em 0;font-size:14px;text-align:center">把当前位置设为精确定位？</h4><div style="text-align:center"><div style="color:#2788da">（继续拖动图标以重新定位）</div><div><input type="button" value="确定" onclick="siteMap.clickOk();">&nbsp;&nbsp;<input type="button" value="取消" onclick="    siteMap.clickCancel();"></div></div></div><div class="BMap_bubble_max_content" style="display: none; position: relative;"></div></div><img style="position: absolute; top: 12px; width: 10px; height: 10px; cursor: pointer; z-index: 10000; left: 227px;" src="http://api.map.baidu.com/images/iw_close1d3.gif"><img style="position: absolute; top: 12px; width: 10px; height: 10px; cursor: pointer; z-index: 10000; display: none; left: 207px;" src="http://api.map.baidu.com/images/iw_plus1d3.gif"></div></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "="" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 19px; height: 25px; left: 167px; top: 231px; z-index: -6409438; -webkit-user-select: none; background: url(http://api.map.baidu.com/images/blank.gif);" title=""></span><span class="BMap_Marker BMap_noprint" unselectable="on" "="" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 1px; height: 1px; left: 177px; top: 256px; z-index: -6409438; -webkit-user-select: none; background: url(http://api.map.baidu.com/images/blank.gif);" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"><div class="BMap_shadow" style="position: absolute; left: 46px; top: 181px;" type="infowindow_shadow"><div style="overflow: hidden; z-index: 1; position: absolute; left: 44px; top: 0px; width: 70px; height: 30px;"><img onmousedown="return false" style="left: -323px; top: 0px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 114px; top: 0px; width: 163px; height: 30px;"><img onmousedown="return false" style="left: -393px; top: 0px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 277px; top: 0px; width: 70px; height: 30px;"><img onmousedown="return false" style="left: -1033px; top: 0px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 29px; top: 30px; width: 85px; height: 15px;"><img onmousedown="return false" style="top: -30px; left: -308px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 114px; top: 30px; width: 177px; height: 15px;"><img onmousedown="return false" style="left: -360px; top: -30px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 291px; top: 30px; width: 85px; height: 15px;"><img onmousedown="return false" style="top: -30px; left: -1048px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 45px; width: 50px; height: 60px;"><img onmousedown="return false" style="left: -14px; top: -310px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 50px; top: 45px; width: 11px; height: 60px;"><img onmousedown="return false" style="left: -255px; top: -310px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 61px; top: 45px; width: 140px; height: 60px;"><img onmousedown="return false" style="left: -440px; top: -310px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 201px; top: 45px; width: 61px; height: 60px;"><img onmousedown="return false" style="left: -255px; top: -310px;" src="http://api.map.baidu.com/images/iws3.png"></div><div style="overflow: hidden; z-index: 1; position: absolute; left: 262px; top: 45px; width: 70px; height: 60px;"><img onmousedown="return false" style="left: -754px; top: -310px;" src="http://api.map.baidu.com/images/iws3.png"></div></div></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 167px; top: 231px; z-index: -6409438;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="http://api.map.baidu.com/images/marker_red_sprite.png" style="border:none;left:0px; top:0px; position:absolute;"></div></span><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 177px; top: 256px; z-index: -6409438;"><div style="position: absolute; margin: 0px; padding: 0px; width: 1px; height: 1px; overflow: hidden;"><img src="http://api.map.baidu.com/images/blank.gif" style="border:none;left:0px; top:0px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 171px; top: 245px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="http://api.map.baidu.com/images/marker_red_sprite.png" style="border:none;left:-19px; top:-13px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; top: 0px; left: 0px; z-index: 1; -webkit-backface-visibility: hidden;"><div style="position: absolute; z-index: -100; left: 162px; top: 256px;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=12915&amp;y=3658&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -66px; top: -47px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=12914&amp;y=3658&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -322px; top: -47px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=12915&amp;y=3657&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -66px; top: 209px; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=12915&amp;y=3659&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -66px; top: -303px; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=tile&amp;x=12914&amp;y=3657&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -322px; top: 209px; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=12914&amp;y=3659&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -322px; top: -303px; opacity: 1;"></div></div><div style="position: absolute; top: 0px; left: 0px; z-index: 2;"></div></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url(http://api.map.baidu.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_cpyCtrl anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 81px; position: absolute; z-index: 10; background: none;"><span _cid="1" style="display: inline;"><span style="font-size:11px">© 2014 Baidu&nbsp;- Data © <a target="_blank" href="http://www.navinfo.com/">NavInfo</a> &amp; <a target="_blank" href="http://www.yootu.com/">yootu</a> &amp; <a target="_blank" href="http://www.365ditu.com/">道道通</a></span></span></div><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 10; bottom: 0px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="http://api.map.baidu.com/images/copyright_logo.png"></a></div><div unselectable="on" class=" BMap_stdMpCtrl BMap_stdMpType0 BMap_noprint anchorTL" style="width: 62px; height: 204px; bottom: auto; right: auto; top: 10px; left: 10px; position: absolute; z-index: 1100;"><div class="BMap_stdMpPan"><div class="BMap_button BMap_panN" title="向上平移"></div><div class="BMap_button BMap_panW" title="向左平移"></div><div class="BMap_button BMap_panE" title="向右平移"></div><div class="BMap_button BMap_panS" title="向下平移"></div><div class="BMap_stdMpPanBg BMap_smcbg"></div></div><div class="BMap_stdMpZoom" style="height: 159px; width: 62px;"><div class="BMap_button BMap_stdMpZoomIn" title="放大一级"><div class="BMap_smcbg"></div></div><div class="BMap_button BMap_stdMpZoomOut" title="缩小一级" style="top: 138px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSlider" style="height: 120px;"><div class="BMap_stdMpSliderBgTop" style="height: 120px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSliderBgBot" style="top: 19px; height: 105px;"></div><div class="BMap_stdMpSliderMask" title="放置到此级别"></div><div class="BMap_stdMpSliderBar" title="拖动缩放" style="cursor: url(http://api.map.baidu.com/images/openhand.cur) 8 8, default; top: 19px;"><div class="BMap_smcbg"></div></div></div><div class="BMap_zlHolder"><div class="BMap_zlSt"><div class="BMap_smcbg"></div></div><div class="BMap_zlCity"><div class="BMap_smcbg"></div></div><div class="BMap_zlProv"><div class="BMap_smcbg"></div></div><div class="BMap_zlCountry"><div class="BMap_smcbg"></div></div></div></div></div></div>
+            <a id="closeMapDiv">×</a>
+        </div>
+    </div>
+
+    <div>
+        <div class="lego-save-btn" id="LegoMapSave">保存</div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script><script type="text/javascript" src="http://api.map.baidu.com/getscript?v=1.3&amp;ak=&amp;services=&amp;t=20140929064447"></script><link rel="stylesheet" type="text/css" href="http://api.map.baidu.com/res/13/bmap.css">
+<script type="text/javascript">
+    var mapData = { "address": "\u5317\u4eac\u5e02@|\u6d77\u6dc0\u533a@|\u4e0a\u5730\u8857\u9053@|\u4e0a\u5730\u5341\u8857@|\u767e\u5ea6\u5927\u53a6", "name": "\u767e\u5ea6\u5927\u53a6", "streetName": "\u4e0a\u5730\u5341\u8857", "lng": "116.307897", "lat": "40.055797", "type": "pic", "showAddr": "\u5317\u4eac\u5e02\u6d77\u6dc0\u533a\u4e0a\u5730\u8857\u9053\u4e0a\u5730\u5341\u8857" };
+</script>
+<script type="text/javascript" src="/cptlib/lego/base/js/areaInfo.min.js?t=0518"></script>
+<script type="text/javascript" src="/cptlib/lego/map/js/useaddrjons.js?t=0518"></script>
+<script type="text/javascript" src="/cptlib/lego/map/js/option.js"></script>
+
+
+<script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+<script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+<div class="pl0-alert" style="opacity: 0;">保存成功</div></body></html>

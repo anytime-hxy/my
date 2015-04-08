@@ -1,0 +1,82 @@
+.lgm-comLink-wrap{
+    border-bottom: none;
+    line-height: 30px;
+    height: 30px;
+    display: -webkit-box;
+}
+
+.lgm-comLink-selectWrap{
+    -webkit-box-flex: 1;
+      height: 26px;
+      border: solid 1px #DFDFDF;
+      border-radius: 1px;
+      vertical-align: middle;
+      font-size: 12px;
+      position: relative;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    background: url("/cptlib/lego/cover2/images/arrow.png") no-repeat 12px 8px;
+    background-position: right center;
+    background-position-x: 95%;
+    color: black;
+}
+.lgm-comLink-pagediv-warn{
+    border-color: red !important;
+}
+
+.lgm-comLink-padding{
+    width: 13px;
+}
+
+.lgm-comLink-type, .lgm-comLink-page, .lgm-comLink-input{
+    display: block;
+    line-height: 26px;
+    margin: 0 auto 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+}
+
+.lgm-comLink-input{
+    color: #000;
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    outline: none;
+    border: none;
+    line-height: 24px;
+}
+
+.lgm-comLink-type-ul, .lgm-comLink-page-ul{
+    min-width: 80px;
+    position: absolute;
+    border: solid 1px #DFDFDF;
+    background: #FFF;
+    z-index: 800;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    top: 12px;
+    left: -1px;
+    right: -1px;
+}
+
+.lgm-comLink-type-ul li, .lgm-comLink-page-ul li{
+    line-height: 24px;
+    padding: 0 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.lgm-comLink-type-ul li:hover, .lgm-comLink-page-ul li:hover{
+    color: #06c;
+    background-color: #f2f7fd;
+}
+li.lgm-comLink-addpage:hover{
+    background: #F2F7FD url("/cptlib/lego/cover2/images/add.png") no-repeat 4px 6px;
+}
+li.lgm-comLink-addpage{
+    padding-left: 20px;
+    background: #fff url("/cptlib/lego/cover2/images/add.png") no-repeat 4px 6px;
+}

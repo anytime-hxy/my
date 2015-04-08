@@ -1,0 +1,224 @@
+/* for rest */
+
+body, div, table, input, textarea {
+	margin: 0;
+	padding: 0;
+	color: #a4a9ae;
+	font-size: 12px;
+}
+a{
+	color: black;
+}
+
+.lego-cover-select{
+    margin:10px;
+}
+.lego-cover-select .lgm-icon-selectWrap{
+    display: inline-block;
+}
+.lego-cover-align-wrap .lgm-icon-selectWrap{
+    display: inline-block;
+}
+
+.lego-cover-nav-icon{
+    display: -webkit-box;
+    height: 37px;
+    line-height: 30px;
+    position: relative;
+}
+.lego-cover-nav-iconTip{
+    display: inline-block;
+}
+
+.lego-cover-nav-iconSet{
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+}
+.lego-cover-nav-icon.hover{
+    height: 230px;
+}
+.lego-cover-nav-icon.hover .lego-cover-nav-iconSet{
+    background-color: #6ba3ed;
+}
+.lego-cover-nav-icon.hover .lego-cover-nav-iconWrap{
+    border-left-color: #6ba3ed;
+    border-top-color: #6ba3ed;
+
+}
+.lego-cover-nav-icon.hover .lego-cover-nav-icon-up{
+    display: block;
+}
+.lego-cover-nav-icon.hover .lego-cover-nav-iconSet *{
+    color: white;
+}
+
+.lego-cover-nav-iconWrap{
+    width: 36px;
+    height: 30px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    background-position: center center;
+    background-size: 28px;
+    background-repeat: no-repeat;
+    background-color: #d0d4d9;
+}
+.lego-cover-nav-iconDetail{
+    -webkit-box-flex: 1;
+   display: -webkit-box; 
+   height: 30px;
+}
+
+.lego-cover-nav-icon-default{
+    background: url(/cptlib/lego/cover2/images/image-icon.png) center center no-repeat;
+    background-size: 70px;
+    background-position-y: 40%;
+}
+
+.lego-cover-nav-iconDefault{
+    background-image: url(/cptlib/lego/cover2/images/image-icon.png);
+}
+
+.lego-cover-nav-iconDetTip{
+    color: #6ba3ed;
+    cursor: pointer;
+    padding-left: 5px;
+    margin-right: 10px;
+}
+.lego-cover-nav-iconDetSelect{
+    -webkit-box-flex: 1;
+    display: none;
+}
+.hover .lego-cover-nav-iconDetSelect{
+    display: block;
+    margin-top: 2px;
+}
+
+.lego-cover-nav-iconDetSelect .lgm-icon-selectWrap{
+    display: inline-block;
+}
+.lgm-icon-selectIcon{
+    top: 5px;
+}
+.lego-cover-selectItem{
+    margin-left: 23px;
+    color: #A4A9AE;
+    font-size: 13px;
+}
+.lego-cover-nav-icon-up{
+    height: 201px; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    background-color: #f6f8fa;
+    z-index: 1000;
+    border: 1px solid #6ba3ed;
+    display: none;
+}
+
+.lego-cover-nav-icons{
+    background: white;
+    overflow: auto;
+    height: 199px;
+}
+.lego-cover-nav-icon-custom{
+    display: none;
+}
+.lego-cover-nav-icon-custom button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 130px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 25px;
+    line-height: 25px;
+
+}
+.lego-cover-nav-icons-tip{
+    background-color: #d0d4d9;
+    color: white;
+    text-indent: 13px;
+    line-height: 25px;
+    height: 25px;
+}
+
+.lego-cover-nav-icons-items{
+    display: -webkit-box;
+}
+.lego-cover-nav-icons-item{
+    -webkit-box-flex: 1;
+    border-right: 1px solid #7aacef;
+    border-bottom: 1px solid #7aacef;
+    height: 66px;
+    cursor: pointer;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #6ba3ed;
+}
+.lego-cover-nav-icons-item:hover{
+    background-color: #3265a7;
+}
+
+.lego-cover-nav-icons-item.icon-1{
+    background-image: url(/cptlib/lego/cover2/images/icon1.png);
+}
+.lego-cover-nav-icons-item:last-child{
+    border-right: none;
+}
+.lego-cover-nav-icons-items:first-child{
+    border-top: 1px solid #7aacef;
+}
+.lego-cover-up-process{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('/cptlib/lego/cover2/images/loading_bar.gif') no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-position: center 45%;
+    text-align: center;
+    line-height: 215px;
+    color: #FFF;
+    font-size: 12px;
+    z-index: 9999;
+    display: none;
+}
+
+
+
+
+.lego-cover-nav-item{
+    padding: 10px 15px 10px 15px;
+    /*margin: 10px 0 10px 0;*/
+    border-top: 1px solid #dfdfdf;
+    position: relative;
+    background-color: #fff;
+    min-height: 67px;
+}
+.lego-cover-nav-item:last-child{
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.lego-cover-nav-con{
+    display: -webkit-box;
+}
+
+.lego-cover-nav-name{
+    width: 100px;
+    margin-right: 10px;
+}
+.lego-cover-nav-name input{
+    display: block;
+    width: 100%;
+}
+.lego-cover-nav-link{
+    -webkit-box-flex: 1;
+}
+
+
+
+#up-btn-hide{
+    display: none;
+}

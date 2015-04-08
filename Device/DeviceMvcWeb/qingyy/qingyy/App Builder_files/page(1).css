@@ -1,0 +1,293 @@
+
+/* for list common */
+.clear:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+.ellipsis{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.lgm-list a{
+    color:#00C;
+    text-decoration:none
+}
+.lgm-list img {
+  border: 0;
+}
+.lgm-list{
+    border-bottom: 1px solid #DCE2E6;
+}
+.lgm-list-inner{
+    padding:0 8px 8px;
+    padding:6px 11px 6px 11px;
+    background-color: transparent;
+    padding-right: 0;
+}
+.lgm-list-head{
+    background-color: #fff;
+    line-height: 43px;
+    height:43px;
+    border:1px #DCE2E6 solid;
+    border-bottom:none;
+}
+.lgm-list-tip{
+    font-size: 18px;
+    color:#0596fb;
+    padding-left: 18px;
+    position:relative;
+}
+.lgm-list-tip:before{
+    content: "";
+    width: 8px;
+    height: 15px;
+    background-color: #0596fb;
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    font-size: 14px;
+}
+.lgm-list-tip:after{
+    content: "";
+    width: 0;
+    height:0;
+    position:absolute;
+    bottom: 0;
+    left:8px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #fff;
+}
+.lgm-list-body{
+    background-color: #fff;
+}
+.lgm-list-body:last-child{
+    border-bottom: none;
+}
+.lgm-list-col{
+    display:-webkit-box;
+    display:box;
+    border-bottom:1px solid rgb(231, 231, 231);
+    padding: 11px 0px;
+}
+.lgm-list-col:last-child{
+    border-bottom:none;
+}
+
+.lgm-list-col.hover,.lgm-list-col:hover{
+    /*
+    background-color: rgb(250,250,250);
+    */
+}
+.lgm-list-l{
+    width:72px;
+    height:72px;
+    background:url(/cptlib/lego/list/images/img-space1.png) center center no-repeat;
+    background-size:cover;
+    margin-top: 0px;
+    margin-right: 11px;
+    /*border:1px solid #DFDFDF;*/
+    overflow:hidden;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+}
+.list-style3 .lgm-list-l{
+    background-image:url(/cptlib/lego/list/images/list-3-icon.jpg);
+}
+.lgm-list-l>img{
+    width:72px;
+    height:72px;
+    display: none;
+}
+.lgm-list-r{
+    -webkit-box-flex:1;
+}
+.lgm-list-more{
+    background-color:#fff;
+    padding: 10px 8px;
+    text-align: center;
+    border:1px #e7e7e7 solid;
+    margin-right: 11px;
+    border-radius: 4px;
+
+}
+.lgm-list-more *{
+    color: rgb(55,55,55);
+}
+.lgm-list-more + .lgm-list-body{
+    border-bottom: none !important;
+}
+.lgm-list-loading{
+    display:none;
+}
+.lgm-list-error{
+    display:none;
+}
+.lgm-list-more.open .lgm-list-loading{
+    display:block;
+}
+.lgm-list-more.open .lgm-list-ltext{
+    display:none;
+}
+.lgm-list-more.error .lgm-list-error{
+    display:block;
+}
+
+/** for list style1*/
+.lgm-list-t{
+    color:#373737;
+    font-size: 16px;
+    font-weight:normal;
+    clear:both;
+}
+.lgm-list-c{
+    padding-top: 5px;
+    min-height: 2.5em;
+}
+.lgm-list-c:empty{
+    padding:none;
+}
+.lgm-list-a{
+    font-size: 12px;
+    width:50%;
+    height:15px;
+    display:block;
+    float: left;
+    margin:0 0 2px 0;
+    color:#808080;
+    font-weight: normal;
+}
+.lgm-list-a>b{
+    color:rgb(119, 119, 119);
+    overflow: hidden;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+.list-style1 .list-style1-hide-line3 .lgm-list-t,.list-style1 .list-style1-hide-line2 .lgm-list-t,.list-style1 .list-style1-hide-line1 .lgm-list-t{
+    padding-top: 7px;
+}
+
+.list-style1 a{
+        padding-right: 11px;
+}
+
+.list-style1 .lgm-list-a:empty{
+    height: 3px;
+}
+
+.list-style1 .lgm-list-a b{
+    display: none;
+}
+
+/** for list style 2 **/
+    .list-style2 a{
+        padding-right: 7px;
+    }
+
+.list-style2 .lgm-list-r,
+.list-style3 .lgm-list-r{
+    position: relative;
+    margin-right: 30px;
+}
+.list-style2 .lgm-list-r:after,
+.list-style3 .lgm-list-r:after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    overflow: hidden;
+    border-right: 1px dotted rgba(255, 255, 255, 0.36);
+    display: block;
+    overflow: hidden;
+    top: 6px;
+    right: -24px;
+    bottom: 0;
+    background: url(/cptlib/lego/list/images/list_more.png) center center no-repeat;
+    margin-top: -8px;
+    background-size: 11px;
+
+}
+.lgm-list-t{
+    color:#373737;
+    font-size: 16px;
+    font-weight:normal;
+    display:-webkit-box;
+    display:box;
+}
+.list-style3 .lgm-list-t{
+    font-weight: bold;
+}
+.lgm-list-t1{
+    -webkit-box-flex:1;
+    display:block;
+    font-size: 16px;
+}
+.lgm-list-t4{
+    display:inline-block;
+    color:#0597FC;
+    color: #808080;
+    font-size: 11px;
+    vertical-align: middle;
+}
+.lgm-list-c{
+    padding-top: 4px;
+    color:#808080;
+    margin-bottom: 5px;
+    font-size:14px;
+    line-height: 120%;
+    min-height: 2.2em;
+    word-break: break-all;
+}
+
+.lgm-list-b{
+    display:-webkit-box;
+    display:box;
+}
+.lgm-list-t5,.lgm-list-t6{
+    -webkit-box-flex:1;
+    display:block;
+    font-size: 12px;
+    color:#0597FC;
+    color: #c1c1c1;
+}
+
+.list-style2 .lgm-list-t5, .list-style2 .lgm-list-t6{
+    color: #c1c1c1 !important;
+}
+
+.list-style2-line2 .lgm-list-t{
+    padding-top: 10px;
+}
+
+.lgm-list-t6{
+    text-align: right;
+    font-size: 12px;
+    color:#989898;
+}
+.lgm-list-t4>b,.lgm-list-t5>b,.lgm-list-t6>b{
+    font-weight: normal;
+    padding-right: 3px;
+}
+
+/*
+ * for style 3
+ *
+ * */
+.list-style3 .lgm-list-l{
+    border-radius: 0;
+    height: 104px;
+}
+.list-style3 .lgm-list-a{
+    width: 100%;
+    font-size: 13px;
+    height: 17px;
+}
+
+.list-style1-hide-line1.list-style1-hide-line2.list-style1-hide-line3 .lgm-list-c{
+    display: none; 
+}

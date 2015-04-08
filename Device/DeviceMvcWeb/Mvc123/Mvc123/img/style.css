@@ -1,0 +1,119 @@
+/*
+* @Description:	YT
+* @Author:		niwashi
+*/
+@charset "utf-8";
+*{font:normal 12px/100% "宋体",Verdana,sans-serif}
+ul,ol,li {list-style:none}
+h1,h2,h3,h4,h5,form,div,p,i,ul,li,ol,body,dd,dl,dt,input,table,th,td,thead,tbody{margin:0; padding:0}
+img{border:0}
+a{text-decoration:none;color:#000}
+a:hover{text-decoration:none;}
+div,p{display:block}
+form{background:0;border:0; padding:0; margin:0}
+html,body{width:100%;height: 100%;margin:0 0 0 0}
+body{background: url(background.gif);margin:0}
+
+@font-face{font-family: "zz";src: url('../fonts/zaozi.otf');}
+
+.ms-head{width: 100%;background: #242527;height: 48px;}
+	.ms-logo{font-size: 22px;line-height: 48px;color: #999;padding:0 10px;font-family: "微软雅黑"}
+	.ms-logo b{margin:0 0 0 10px;font-family: "Verdana"}
+.ms-head cite{float: right;}
+	.ms-mess,.ms-user{vertical-align: top;padding:0 20px}
+	.ms-mess{border-right:1px #484A4F solid;display: inline-block;height: 48px;position: relative;}
+	.ms-mess b{position: absolute;background: #89C4F4;color: #fff;right:15px;top:5px;padding:2px 3px;border-radius: 3px;font-size: 12px;font-family: "Verdana"}
+	.ms-mess i{color: #999;font-size: 22px;line-height: 48px;padding:0 10px}
+
+	.ms-user{color: #ccc;line-height: 42px;}
+	.ms-user:hover{color: #ccc}
+	.ms-user i{font-size: 16px;margin-top: 15px;}
+	.ms-user b{border-radius: 50px;display: inline-block;overflow: hidden;vertical-align: middle}
+	.ms-user b img{width: 31px;}
+
+.ms-nav{background: none;border:0;border-radius: 0;padding:20px 0 0 0}
+.ms-nav h2{height: 40px;background: #27272B;border-right: 3px #d90000 solid;padding:0 0 0 20px;margin:0 0 20px 0;}
+.ms-nav h2 a{line-height: 40px;color: #fff;font-size: 14px;}
+.ms-nav h2 i{font-size: 20px;vertical-align: middle;margin-right:3px}
+.ms-nav li.uk-parent{border-bottom:1px #414247 solid;}
+.ms-nav li.uk-parent a:hover{background: #2B2B30}
+.ms-nav li.uk-parent a:hover{color: #aaa}
+.ms-nav li.uk-parent a{line-height: 30px;font-size: 14px;color: #aaa;padding-left:20px;}
+.ms-nav li.uk-parent a i{font-size: 16px;display: inline-block;width: 20px;vertical-align: middle;}
+.ms-nav ul.uk-nav-sub{padding-left:0;}
+.ms-nav ul.uk-nav-sub li{heig1ht: 40px;}
+.ms-nav ul.uk-nav-sub li:hover{background: #2B2B30}
+.ms-nav li.uk-active{background: #27272B}
+.ms-nav	ul.uk-nav-sub{background: #111;}
+.ms-nav	ul.uk-nav-sub li{padding:0 0 0 55px;}
+.ms-nav	ul.uk-nav-sub li.open{background: #414247;}
+.ms-nav	ul.uk-nav-sub li.open a{color: #fff}
+.ms-nav li.uk-parent li.open a:hover{background: #414247;}
+.ms-nav .uk-breadcrumb>li:nth-child(n+2):before {content: ">";margin-top:1px;}
+	
+.ms-box-ri h1{height: 74px;padding:0 20px;}
+.ms-box-ri h1 b{font-size: 40px;font-family: "zz";line-height: 74px;vertical-align: top;font-weight:normal;}
+.ms-box-ri h1 i{font-size: 14px;vertical-align: top;margin:19px 0 0 7px;display: inline-block;font-family: "zz";color: #d90000}
+
+.ms-add{padding:0 20px;background: #EEEEEE;color: #999;height: 40px;line-height: 40px}
+.ms-add a{color: #999;line-hei1ght: 40px;}
+.ms-add i{font-size: 14px;}
+
+.ms-snav{margin:40px 20px 0 20px;padding:0 0 10px 0;font-size: 22px;color: #aaa}
+.ms-snav ul{overflow: hidden;}
+.ms-snav li{float: left;}
+.ms-snav a{font-size: 24px;color: #aaa;padding: 0 20px;font-family: "宋体"}
+.ms-snav a:hover{color: #d90000}
+.ms-snav span{color: #d90000;font-size: 24px;padding: 0 20px}
+.ms-snav{border-bottom: 2px #ccc solid;}
+
+.ms-tag{margin:20px 20px 0 20px;}
+.ms-tag .uk-subnav a{line-height: 30px;background: #f0f0f0;;}
+.ms-tag .uk-subnav>li>a{color: #999;padding:0 20px}
+.ms-tag .uk-subnav>li.uk-active>a{color: #fff}
+.ms-tag .uk-subnav>li.uk-active>a{background: #d90000;color: #fff}
+.ms-tag .uk-subnav{margin:0 0 20px 0;}
+
+.ms-fun input{}
+.ms-list td{border-right: 1px #DDDDDD solid;line-height: 26px}
+.ms-list thead{border:1px #ddd solid;
+background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(10%,#f6f6f6)); 
+background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 10%); 
+background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 100%); 
+background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 100%); 
+background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );}
+:root .ms-list thead{filter:none;} 
+
+.ms-list tbody{border-left: 1px #ddd solid;}
+.ms-list th{line-height: 18px;}
+.ms-list td.ms-ri,.ms-list th.ms-ri{text-align: right;}
+.ms-list td a{text-decoration: underline;}
+.ms-list td a.red{color: #d90000}
+.ms-list td,.ms-list th{color: #666}
+
+.ms-cue .uk-close{line-height: 12px;}
+
+.ms-table{width: 600px;border:1px #ddd solid;border-radius: 20px;}
+.ms-table td.ms-ri{text-align: right;width: 30%;}
+.ms-table td{line-height: 32px;}
+.ms-table td i{color: #d90000}
+.ms-table td i.green{color: #6DD900}
+
+.ms-button{}
+.ms-lib{margin:20px 20px 0 20px;}
+
+#ms-pop h2{font-family: "微软雅黑";}
+.ms-pop-table td.ms-ri{text-align: right;width: 35%;}
+.ms-pop-table td{line-height: 32px;}
+.ms-pop-table td i{color: #d90000}
+.ms-pop-table td i.green{color: #6DD900}
+
+.ms-center li a{line-height: 22px;}
+.ms-center li a i{font-size: 18px;width: 20px;display: inline-block;vertical-align: middle;}
+
+.ms-box{height: 100%}
+.ms-box td{vertical-align: top;}
+	.ms-box-le{background: #35363A;color: #fff;width: 240px;}
+

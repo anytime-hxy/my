@@ -1,0 +1,99 @@
+.lego-cover-nav-item {
+    padding-right: 20px;
+    min-height: 52px;
+}
+.lego-common-delbtn {
+    right: 2px;
+}
+.lego-cover-nav-add{
+    cursor: pointer;
+    float: right;
+    display: inline-block;
+    text-align: right;
+    color: #5D9CEC;
+    font-weight: bolder;
+    font-size: 14px;
+    background: url('/cptlib/lego/cover3/images/plus-icon.png') no-repeat;
+    padding-left: 22px;
+    background-position-y: center;
+    margin: 10px 15px;
+}
+.lego-cover-upload-img{
+    height: 98px;
+    line-height: 128px;
+}
+#lego-slide-add{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+
+
+
+ .lego-slide-timeset-label{
+    font-size: 12px;
+    font-weight: bold;
+    color: #A4A9AE;
+    text-indent: 15px;
+}
+.lego-slide-timeset-label{
+    border-bottom: 1px solid #DFDFDF;
+    padding: 25px 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #71767b;
+    text-indent: 15px;
+}
+.lego-slide-timeset-con{
+    position: relative;
+    padding: 15px;
+    font-size: 12px;
+    color: #A4A9AE;
+}
+.lego-slide-timeset-sel{
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+}
+.lego-slide-timeset-sel select{
+    min-width: 6em;
+    max-width: 9em;
+    padding: 4px 17px 4px 4px;
+    border: 0;
+    -webkit-appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 12px;
+    color: #333;
+}
+.lego-slide-timeset-sel select>option{
+    padding: 10px;
+    text-indent: 12px;
+}
+#lego-slide-setting-mask{
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: .1;
+}
+#lego-slide-setting{
+    position: fixed;
+    background-color: white;
+    z-index: 2000;
+    display: none;
+    /*
+    border-radius: 5px;
+    */
+    -webkit-box-shadow: 0 0 8px #BDBDBD;
+    padding: 0 10px 20px 10px;
+    left: 13px;
+    right: 13px;
+    top: 130px;
+}
+
+body{padding-bottom: 100px;}

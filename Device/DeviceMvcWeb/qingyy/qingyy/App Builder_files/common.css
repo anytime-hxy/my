@@ -1,0 +1,329 @@
+.lego-show-tips{
+   background: url("/cptlib/lego/base/images/show_tips.png") no-repeat 16px 9px;
+   color: #a4a9ae;
+   padding: 6px 15px 6px;
+   line-height: 20px;
+   font-family: '宋体';
+   text-indent: 16px;
+   font-size:12px;
+}
+.lego-common-input{
+    color: #333;
+    border: solid 1px #dfdfdf;
+    /*padding-left: 8px;
+     */
+
+    text-indent: 8px;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    font-size: 12px;
+    width: 100%;
+    height: 26px;
+}
+
+.lego-common-input:focus{
+    border-color: #5D9CEC;
+}
+
+
+.lego-common-required{
+    border-color: #D73329 !important;
+}
+
+
+.lego-common-inputSize{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 14px;
+    color: #a4a9ae;
+    line-height: 17px;
+    height: 17px;
+}
+
+
+.lego-common-selectwrap{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #DFDFDF;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.lego-common-selectwrap:after{
+content: "";
+position: absolute;
+top: 11px;
+right: 5px;
+border: 5px solid rgba(0, 0, 0, 0);
+border-top-color: #A5A5A5;
+border-bottom-width: 0;
+pointer-events: none;
+}
+
+.lego-common-selectwrap select{
+    min-width: 6em;
+    max-width: 9em;
+    padding: 4px 17px 4px 4px;
+    border: 0;
+    -webkit-appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 12px;
+    color: #A4A9AE;
+}
+
+.lego-common-help{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-position: -177px -79px;
+    background-image: url("http://apps.bdimg.com/developer/static/1404081138/console/base/img/func-icon.png");
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.lego-common-blockitem{
+    border: 1px dashed #fff;
+}
+.lego-common-blockitem.lego-common-blockitem-warn{
+    border-style: dashed !important;
+}
+
+.lego-common-blockitem:hover{
+    border: 1px dashed #3498db !important;
+}
+.lego-common-blockitem:hover .lego-common-delbtn{
+    display: block;
+    z-index: 1000;
+}
+
+.lego-common-blockitem-warn{
+    border-color: red !important;
+}
+
+.lego-common-btn{
+    height: 30px;
+    background-color: #5D9CEC;
+    color: #FFF;
+    border: none;
+    font-weight: bolder;
+    padding: 0 20px;
+    margin: 0 7px;
+    border-radius: 0;
+}
+.lego-common-btn-cancel{
+    background-color: #D0D4D9 !important;
+}
+
+.lego-common-delbtn{
+    display: none;
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    background: url(/cptlib/lego/base/images/cm-del-btn.png) no-repeat;
+    position: absolute;
+    right: 14px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.lego-common-tips{
+    width: 80%;
+    position: fixed;
+    left: 10%;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
+    z-index: 20000;
+}
+
+.lego-common-errortip{
+    background-color: #fcdddd;
+    color: #333;
+    opacity: 0;
+}
+
+.lego-common-righttip{
+    background-color: #56a845;
+    opacity: 0;
+}
+.alert{
+    background-color: #56a845;
+    color: #fff;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding:10px 20px 10px 10px;
+    position:fixed;
+    width:300px;
+    top:0px;
+    left:50%;
+    margin-left:-150px;
+    display:none;
+}
+/*提示确认层*/
+#lgm-alter-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#lgm-alter-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 11000;
+}
+.lgm-alter-layout{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    z-index: 11010;
+    width: 200px;
+    padding: 10px;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.lgm-alter-t,.lgm-alter-t:after{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.lgm-alter-t{
+    top: -11px;
+    left: 10%;
+    border-bottom-color: rgba(0,0,0,0.25);
+    border-width: 11px;
+    border-top-width: 0;
+}
+.lgm-alter-t:after{
+    top: 1px;
+    margin-left: -10px;
+    border-bottom-color: #fff;
+    content: "";
+    border-width: 10px;
+    border-top-width: 0;
+}
+
+.lgm-alter-c{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: #71767b;
+}
+.no-btn .lgm-alter-c{
+    padding-bottom: 0;
+}
+
+.lgm-alter-b{
+    text-align: center
+}
+
+
+
+.lgm-icon-selectWrap{
+position: relative;
+cursor: pointer;
+}
+
+.lgm-icon-selectIcon{
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px !important;
+    border-radius: 9px;
+    border: 1px solid #E7E7E7;
+    top: 12px;
+    top: 0;
+    background-color: white;
+}
+
+.lgm-icon-selectMin{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 3px;
+    background-color: white;
+}
+.lgm-icon-selected .lgm-icon-selectMin{
+    background-color: #5D9CEC;
+}
+
+.lgm-icon-content{
+    margin-left: 23px;
+    margin-right: 17px;
+    color: #A4A9AE;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+
+.lgm-block-title{
+    font-size: 12px;
+    color: #71767b;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-bottom: 1px solid #DFDFDF;
+    clear: both;
+}
+.lgm-block-title>span{
+    font-weight: normal;
+    color: #a4a9ae;
+}
+::-webkit-scrollbar {
+width: 8px;
+height: 8px;
+}
+*, *:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/*** for select ***/
+.lgm-select-wrap{
+    cursor: pointer;
+}
+.lgm-select{
+
+    border: 1px solid #dfdfdf;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+}
+
+.lgm-select+div{
+    margin-left: 17px;
+    text-indent: 5px;
+}
+.lgm-select.select{
+    background: url(/cptlib/lego/base/images/cm-select.png) no-repeat center center;
+    background-size: 13px;
+}
+
+/***Add mask-layer for diable option*****/
+.mask-layer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255,255,255,0); 
+  z-index: 11;
+  display: none;
+}

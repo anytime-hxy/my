@@ -1,0 +1,5 @@
+D:\Device\DeviceMvcWeb\qingyy\qingyy\bin\qingyy.dll
+D:\Device\DeviceMvcWeb\qingyy\qingyy\bin\qingyy.pdb
+D:\Device\DeviceMvcWeb\qingyy\qingyy\obj\Debug\qingyy.csprojResolveAssemblyReference.cache
+D:\Device\DeviceMvcWeb\qingyy\qingyy\obj\Debug\qingyy.dll
+D:\Device\DeviceMvcWeb\qingyy\qingyy\obj\Debug\qingyy.pdb

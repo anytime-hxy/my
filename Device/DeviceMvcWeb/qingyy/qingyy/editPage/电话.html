@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="telephone">
+
+
+
+
+    <div class="lego-layout lego-telephone-layout" id="LegoTelephoneLayout" data-pkgname="lego" data-cptid="cp20774778013627877" data-cptname="telephone" data-appid="881131" data-plugid="pl0">
+        <div class="lego-title">
+            <span>电话信息</span>
+        </div>
+        <div class="lego-content lego-outer-line">
+            <span>电话号码<em>*</em></span>
+            <input type="text" class="lego-val" id="LegoTelephoneVal" value="">
+        </div>
+        <div class="lego-tel-tip">
+            <p>电话号码格式139-0000-0000，010-85000000</p>
+        </div>
+        <div class="lego-content lego-outer-line">
+            <span class="lego-tel-label-tip">自定义标签<em></em></span>
+            <input type="text" data-min="0" data-max="10" class="lego-val lego-tel-label lego-common-input" id="LegoTelephoneLabel" value="">
+        </div>
+        <div class="lego-content lego-outer-line" style="display: none;">
+            <span class="lego-tel-label-tip">自定义标签2<em></em></span>
+            <input type="text" data-min="0" data-max="10" class="lego-val lego-tel-label lego-common-input" id="LegoTelephoneLabel2" value="24小时免费咨询电话">
+        </div>
+        <div class="lego-title">
+            <span>展示样式</span>
+        </div>
+        <div class="lego-outer-line">
+            <div class="lego-title-styles">
+                <div class="lego-title-style-item title-style-select" data="style1">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">样式一</span>
+                    <div class="lego-tel-style-item2 lego-tel-style-item2-color">
+                        <span class="lego-tel-icon"></span>
+                        <span class="lego-tel-num3">联系我们</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lego-title-styles">
+                <div class="lego-title-style-item " data="style2">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">样式二</span>
+                    <div class="lego-tel-style-item">
+                        <div class="lego-tel-left">
+                            <div class="lego-tel-num">400-123-45678</div>
+                            <div class="lego-tel-numtip">24小时免费咨询电话</div>
+                        </div>
+                        <div class="lego-tel-right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="lego-save-btn" id="LegoTelephoneSave">保存</div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+    <script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+    <title>南京名炽行数码科技有限公司</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="@Url.Content("../img/style.css")"  type="text/css" />
+</head>
+<body>
+    <div class="head-box">
+        <div class="head">
+            <div class="search">
+                @Html.Partial("SearchPartial")
+            </div>
+            <cite>
+                @Html.ActionLink("首页", "Index", "Device", new { @class = ViewBag.IndexClass })
+                @Html.ActionLink("产品介绍", "Product", "Device", new { @class = ViewBag.ProductClass })
+                @Html.ActionLink("联系我们", "About", "Device", new { @class = ViewBag.AboutClass })
+            </cite>
+            <a href="@Url.Action("Index")">
+                <img src="~/img/logo.png" alt=""></a>
+        </div>
+    </div>
+    <div class="banner-box"></div>
+    <div class="arc">
+        @RenderBody()
+    </div>
+    <div class="foot-box">
+        <div class="foot">
+            <ul>
+                <li>
+                    <p>南京名炽行数码科技有限公司</p>
+                    <p>玄武区珠江路688号1-01幢280室</p>
+                    <p>njmcxsm@126.com</p>
+                    <p>王先生 18105180604</p>
+                </li>
+                <li>
+                    <p style="font-weight: bold; font-size: 14px;">业务类型</p>
+                    <p>现代化办公室设备</p>
+                    <p>品牌电脑</p>
+                    <p>会议设备</p>
+                    <p>办公文具</p>
+                </li>
+                <li>
+                    <p style="font-weight: bold; font-size: 14px;">产品类型</p>
+                    <p>打印机</p>
+                    <p>传真机</p>
+                    <p>复印机</p>
+                    <p>投影机</p>
+                    <p>碎纸机</p>
+                </li>
+                <li>
+                    <p style="font-weight: bold; font-size: 14px; line-height: 30px;">关于我们</p>
+                    <p>@Html.ActionLink("联系我们", "About", "Device")</p>
+                </li>
+            </ul>
+            <p class="co">copyright©2014  all rights reserved</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

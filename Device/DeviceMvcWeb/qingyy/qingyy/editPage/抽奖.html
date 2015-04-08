@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Lottery component | Setting</title>
+    <link rel="stylesheet" href="/stylesheets/jquery-ui.min.css">
+    <link rel="stylesheet" href="/stylesheets/jquery-timepicker/jquery.timepicker.css">
+    <link rel="stylesheet" href="/stylesheets/jquery-timepicker/lib/base.css">
+    <link rel="stylesheet" href="/stylesheets/colpick.css">
+    <link rel="stylesheet" href="/stylesheets/setting-lego.css">
+<!--     <link rel='stylesheet' href='http://legotest.com/static/home/css/setting-lego.css'> -->
+    <script src="/javascripts/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/jquery-ui.min.js"></script>
+    <script src="/javascripts/jquery.timepicker.min.js"></script>
+    <script src="/javascripts/jquery.validate.min.js"></script>
+    <script src="/javascripts/colpick.js"></script>
+    <script src="/javascripts/setting.js?201403131320"></script>
+    <script src="/javascripts/message.js"></script>
+    <script type="text/javascript">
+        window.fromlego = true
+    </script>
+    <script>
+        $(function () {
+            var date_pick_opts = {
+                dateFormat: 'yy-mm-dd',
+                onSelect: function (val, picker) {
+                    $(this).blur();
+                },
+                onClose: function (val, picker) {
+                    var curTime = new Date();
+                    var formEl = $(this).parents('#lot_form');
+                    var elName = $(this).attr('name');
+                    if (elName == 'lot_start[date]') {
+                        validateStartTime(formEl, curTime);
+                    }
+                    else if (elName == 'lot_end[date]') {
+                        validateEndTime(formEl, curTime);
+                    }
+                }
+            };
+            $('input[data-type="datepicker"]').datepicker(date_pick_opts);
+
+            var time_pick_opts = {
+                forceRoundTime: true,
+                step: 60,
+                minTime: '00:00',
+                maxTime: '23:00',
+                timeFormat: 'H:i'
+            };
+            $('input[data-type="timepicker"]').timepicker(time_pick_opts);
+
+            var col_pick_opts = {
+                layout: 'hex',
+                submit: false,
+                color: 'cc0000',
+                onChange: function (hsb, hex, rgb, el, bySetColor) {
+                    $('#colpreview').css('background-color', '#' + hex);
+                    $('#colpicker').val('#' + hex);
+                    sync('bgColor', '#' + hex);
+                }
+            };
+            $('#colpicker').colpick(col_pick_opts).keyup(function () {
+                if (this.value.match(/^#[a-fA-F0-9]{6}$/ig)) {
+                    $(this).colpickSetColor(this.value);
+                }
+            });
+
+            jQuery.validator.addMethod('lotTime', function (curVal, curEl) {
+                if (typeof (curVal) != 'string') {
+                    return false;
+                }
+                if (!curVal.match(/^\d{2}:\d{2}$/)) {
+                    return false;
+                }
+                return true;
+            }, 'Please enter a valid time(hh:mm)');
+
+            $('#lot_form').validate({
+                rules: {
+                    lot_name: {
+                        required: true,
+                        maxlength: 4
+                    },
+                    'lot_start[date]': {
+                        required: true,
+                        dateISO: true
+                    },
+                    'lot_start[time]': {
+                        required: true,
+                        lotTime: true
+                    },
+                    'lot_end[date]': {
+                        required: true,
+                        dateISO: true
+                    },
+                    'lot_end[time]': {
+                        required: true,
+                        lotTime: true
+                    },
+                    'lot_limit[num]': {
+                        required: true,
+                        number: true,
+                        min: 1
+                    },
+                    exceed_prompt: {
+                        required: true,
+                        maxlength: 15
+                    },
+                    lot_description: {
+                        required: true,
+                        maxlength: 200
+                    }
+                },
+                messages: {
+                    lot_name: '请输入4个字以内名称',
+                    'lot_start[date]': {
+                        required: '请输入开始日期',
+                        dateISO: '请输入正确的开始日期格式yyyy-mm-dd'
+                    },
+                    'lot_start[time]': {
+                        required: '请输入开始时间',
+                        lotTime: '请输入正确的开始时间格式hh:mm'
+                    },
+                    'lot_end[date]': {
+                        required: '请输入结束日期',
+                        dateISO: '请输入正确的结束日期格式yyyy-mm-dd'
+                    },
+                    'lot_end[time]': {
+                        required: '请输入结束时间',
+                        lotTime: '请输入正确的结束时间格式hh:mm'
+                    },
+                    'lot_limit[num]': {
+                        required: '请输入用户抽奖次数',
+                        min: '请输入有效的抽奖次数(大于0)'
+                    },
+                    exceed_prompt: '请输入15个字以内提示',
+                    lot_description: '请输入200字以内活动说明'
+                },
+                onfocusout: function (element) {
+                    var curTime = new Date();
+                    var valid = $(element).valid();
+                    if (valid) {
+                        var elName = $(element).attr('name');
+                        var elVal = $(element).val();
+                        switch (elName) {
+                            case 'lot_name':
+                                sync('actionBtn', elVal);
+                                break;
+                            case 'lot_description':
+                                sync('description', elVal);
+                                break;
+                            case 'lot_start[time]':
+                                var formEl = $(element).parents('#lot_form');
+                                validateStartTime(formEl, curTime);
+                                break;
+                            case 'lot_end[time]':
+                                var formEl = $(element).parents('#lot_form');
+                                validateEndTime(formEl, curTime);
+                                break;
+                        }
+                    }
+                },
+                onclick: function (element) {
+                    var elId = $(element).attr('id');
+                    if (elId == 'show_winner') {
+                        sync('showWinner', true);
+                    }
+                    else if (elId == 'hide_winner') {
+                        sync('showWinner', false);
+                    }
+                },
+                submitHandler: function (form) {
+                    if ($(form).valid()) {
+                        var timeValid = validateActTime(form);
+                        var prizeValid = validatePrizeSetting(form);
+                        if (timeValid && prizeValid) {
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', '', true);
+                            xhr.send(new FormData(form));
+                            xhr.onload = function () {
+                                if (xhr.status === 200) {
+                                    window.parent.postMessage({
+                                        'action': 'save_success'
+                                    }, '*')
+                                }
+                                callback(xhr.status === 200 ? JSON.parse(xhr.responseText) : { error: 1, status: xhr.status, msg: xhr.statusText });
+                            };
+                        }
+                    }
+                }
+            });
+
+            $('input[name="lot_cancel"]').click(function () {
+                callback({ state: 0, compid: 2081328 });
+            });
+
+            function callback(obj) {
+                var t = /&cid=(\d+)/.exec(location.search);
+                var cid = +(t ? t[1] : 0);
+                window.parent.postMessage({
+                    type: 'callback',
+                    id: cid,
+                    data: obj
+                }, '*');
+            }
+        });
+    </script>
+  </head>
+  <body style="margin: 0px;">
+    <div id="main" class="flex clear">
+      <div id="left" class="vertical" style="display:none">
+        <div id="previewer">
+          <iframe id="lottery_mobile" src="/lottery.html?appid=881131" frameborder="no" border="0"></iframe>
+        </div>
+        <div class="info_text">效果预览</div>
+      </div>
+      <div id="right" class="vertical">
+        <form id="lot_form" method="post" enctype="multipart/form-data" novalidate="novalidate">
+          <h3>抽奖组件设置</h3>
+          <h4 class="app_style">整体风格</h4>
+          <div>
+            <div class="flex mb10">
+              <label>活动头图</label>
+              <div class="vertical">
+                <div>
+                  <img id="bannerPreview" src="http://bcs.duapp.com/cloud-lottery/banner.png" alt="" width="175">
+                </div>
+                <div class="flex">
+                  <span id="banner_upload" class="light_btn flex1 mr5 has_pop" pop="popForImg">上传图片
+                    <input type="file" name="lot_banner" accept="image/jpeg, image/png, image/gif" id="bannerFile">
+					          <input type="hidden" name="lot_banner_old" id="lot_banner_old" value="">
+                  </span>
+                  <span class="light_btn flex1 disabled" id="setDefBanner">默认图片</span>
+                  <div class="pr">
+                    <div id="popForImg" class="pop img" style="display: none;">
+                      建议图片<br>
+                      尺寸640x480 小于200K
+                    </div>
+                  </div>
+                </div>
+                <div class="tip error">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row flex">
+            <label>页面颜色</label>
+            <div id="colpreview" class="color_preview" style="background-color:#c11e1b;"></div>
+            <input id="colpicker" class="w100" type="text" name="lot_bgcolor" value="#c11e1b">
+          </div>
+          <div class="row name_row">
+            <h4 class="btn_name">按钮名称</h4>
+            <div class="flex">
+              <div class="flex col has_pop" pop="popForBtn">
+                <input type="text" name="lot_name" class="lot_name" value="一键抽奖">
+              </div>
+              <div class="pr"><div id="popForBtn" class="pop">请输入4个字以内名称</div></div>
+            </div>
+          </div>
+          <div class="row activity_time">
+            <h4>活动时间</h4>
+            <div class="flex">
+            
+              <div class="flex col mr5">
+                <input class="w150 begin_date hasDatepicker" type="text" name="lot_start[date]" data-type="datepicker" value="2014-11-04" id="dp1414985149544">
+              </div>
+              <div class="flex col">
+                <input class="w80 begin_time ui-timepicker-input" type="text" name="lot_start[time]" data-type="timepicker" value="08:00" autocomplete="off">
+              </div>
+            
+            <label>到</label>
+            
+              <div class="flex col mr5">
+                <input class="w150 end_date hasDatepicker" type="text" name="lot_end[date]" data-type="datepicker" value="2014-11-11" id="Text1">
+              </div>
+              <div class="flex col mr5">
+                <input class="w80 end_time ui-timepicker-input" type="text" name="lot_end[time]" data-type="timepicker" value="08:00" autocomplete="off">
+              </div>
+            
+            </div>
+          </div>
+          <div class="row lottery_name">
+            <h4>中奖名单</h4>
+            <div class="flex">
+            
+              <input type="radio" name="show_winner" class="mr5" id="show_winner" checked="checked" value="true"><label for="show_winner">显示</label>
+              <input type="radio" name="show_winner" class="mr5" id="hide_winner" value="false"><label for="hide_winner">不显示</label>
+            
+            </div>
+          </div>
+          <div class="row lottery_set">
+            <h4>奖项设置</h4>
+            <div id="prize_setting" last_prize_index="0" class="w390">
+              
+              <div id="prize_item_0" class="prize_item">
+                <div class="prize_show" style="display: none;">
+                  <div class="flex mb5">
+                    <span class="prize_show_level w60"></span>
+                    <span class="prize_show_num w40"></span>
+                    <span class="prize_show_name flex1"></span>
+                    <span class="prize_show_opmod option" id="prize_show_opmod_0" onclick="modifyPrize(event);">修改</span>
+                    <span class="prize_show_opdiv w10">&nbsp;|&nbsp;</span>
+                    <span class="prize_show_opdel option" id="prize_show_opdel_0" onclick="deletePrize(event);">删除</span>
+                  </div>
+                  <div>
+                    <span class="prize_show_prompt"></span>
+                  </div>
+                </div>
+                <div class="prize_set" style="display: block;">
+                  <div class="flex mb5">
+                    <label>奖项设置</label>
+                    <div class="flex col w100">
+                      <input type="text" name="lot_prize_0[level]" class="prize_level" placeholder="一等奖" value="一等奖">
+                    </div>
+                    <label class="flex1" style="text-align:left;">数量</label>
+                    <div class="flex col w100">
+                      <input type="text" name="lot_prize_0[num]" class="prize_num" number="" min="0">
+                    </div>
+                  </div>
+                  <div class="flex mb5">
+                    <label>奖品名称</label>
+                    <div class="flex flex1 col">
+                      <input type="text" name="lot_prize_0[name]" class="prize_name flex1 has_pop" maxlength="15" pop="popForPrize0">
+                    </div>
+                    <div class="pr"><div id="popForPrize0" class="pop" style="display: none;">奖品名称15个字以内</div></div>
+                  </div>
+                  <div class="flex mb5">
+                    <label>中奖提示</label>
+                    <div class="flex flex1 col">
+                      <input type="text" name="lot_prize_0[prompt]" class="prize_prompt flex1 has_pop" maxlength="15" placeholder="运气太赞了,获得一等奖" value="运气太赞了,获得一等奖" pop="popForPrizeTip0">
+                    </div>
+                    <div class="pr"><div id="popForPrizeTip0" class="pop">中奖提示15个字以内</div></div>
+                  </div>
+                  <div class="flex">
+                    <label class="holder">占位文字</label>
+                    <span id="prize_commit_0" class="light_btn prize_commit" value="保存" onclick="savePrize(event);" style="width:65px;">保存</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row lottery_rule">
+            <h4>抽奖规则</h4>
+            <div class="flex mb10">
+              <label>抽奖次数</label>
+              <div class="flex col">
+                <input type="text" name="lot_limit[num]" class="w80 mr5" style="width:50px;" required="" min="1" value="3">
+              </div>
+              
+              <input type="radio" name="lot_limit[type]" class="mr5" checked="checked" value="total">
+              <label class="ti0" style="text-indent: 0;">每人N次</label>
+              <input type="radio" name="lot_limit[type]" class="mr5" value="perday">
+              <label class="ti0" style="text-indent: 0;">每天每人N次</label>
+              
+            </div>
+            <div class="flex w390">
+              <label>超出回复</label>
+              <div class="flex flex1 col">
+                <input type="text" name="exceed_prompt" class="w260 has_pop" required="" maxlength="15" value="您的抽奖机会已用完" placeholder="您的抽奖机会已用完" pop="popForExceed">
+              </div>
+              <div class="pr"><div id="popForExceed" class="pop">请输入15个字以内提示</div></div>
+            </div>
+          </div>
+          <div class="mb20">
+            <h4>活动说明</h4>
+            <div class="flex col">
+              <textarea name="lot_description" required="" maxlength="200"></textarea>
+            </div>
+          </div>
+          <div class="include_btn">
+            <p style=" color: red; margin-left: 15px; margin-bottom: 5px;">提示：活动开始后设置将不能更改，保存前请确认</p>
+            
+            <input class="btn blue mr10" type="submit" name="lot_commit" value="保存">
+            
+            <input class="btn gray" type="button" name="lot_cancel" value="取消">
+          </div>
+        </form>
+      </div>
+    </div>
+  
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div class="colpick colpick_hex colpick_hex_ns" style="z-index: 4; position: absolute;" id="collorpicker_991"><div class="colpick_color" style="background-color: rgb(255, 0, 0);"><div class="colpick_color_overlay1"><div class="colpick_color_overlay2"><div class="colpick_selector_outer" style="left: 156px; top: 31px;"><div class="colpick_selector_inner"></div></div></div></div></div><div class="colpick_hue" style="background: linear-gradient(rgb(255, 0, 0), rgb(255, 0, 128), rgb(255, 0, 255), rgb(128, 0, 255), rgb(0, 0, 255), rgb(0, 128, 255), rgb(0, 255, 255), rgb(0, 255, 128), rgb(0, 255, 0), rgb(128, 255, 0), rgb(255, 255, 0), rgb(255, 128, 0), rgb(255, 0, 0));"><div class="colpick_hue_arrs" style="top: 156px;"><div class="colpick_hue_larr"></div><div class="colpick_hue_rarr"></div></div></div><div class="colpick_new_color" style="background-color: rgb(204, 0, 0);"></div><div class="colpick_current_color" style="background-color: rgb(204, 0, 0);"></div><div class="colpick_hex_field"><div class="colpick_field_letter">#</div><input type="text" maxlength="6" size="6"></div><div class="colpick_rgb_r colpick_field"><div class="colpick_field_letter">R</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_g colpick_field"><div class="colpick_field_letter">G</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_rgb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_h colpick_field"><div class="colpick_field_letter">H</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_s colpick_field"><div class="colpick_field_letter">S</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_hsb_b colpick_field"><div class="colpick_field_letter">B</div><input type="text" maxlength="3" size="3"><div class="colpick_field_arrs"><div class="colpick_field_uarr"></div><div class="colpick_field_darr"></div></div></div><div class="colpick_submit">OK</div></div></body></html>

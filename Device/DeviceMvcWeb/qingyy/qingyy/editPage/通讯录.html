@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html{
+            margin: 0;padding:0;
+        }
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+        <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="contact">
+
+
+<style type="text/css">
+.lego-common-input{
+    color: #333;
+    border: solid 1px #dfdfdf;
+    /*padding-left: 8px;
+     */
+
+    text-indent: 8px;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    font-size: 12px;
+    width: 100%;
+    height: 26px;
+}
+
+.lego-common-input:focus{
+    border-color: #5D9CEC;
+}
+
+
+.lego-common-required{
+    border-color: #D73329 !important;
+}
+
+
+.lego-common-inputSize{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 14px;
+    color: #a4a9ae;
+    line-height: 17px;
+    height: 17px;
+}
+
+
+.lego-common-selectwrap{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #DFDFDF;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.lego-common-selectwrap:after{
+content: "";
+position: absolute;
+top: 11px;
+right: 5px;
+border: 5px solid rgba(0, 0, 0, 0);
+border-top-color: #A5A5A5;
+border-bottom-width: 0;
+pointer-events: none;
+}
+
+.lego-common-selectwrap select{
+    min-width: 6em;
+    max-width: 9em;
+    padding: 4px 17px 4px 4px;
+    border: 0;
+    -webkit-appearance: none;
+    position: relative;
+    outline: none;
+    font-size: 12px;
+    color: #A4A9AE;
+}
+
+.lego-common-help{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-position: -177px -79px;
+    background-image: url("http://apps.bdimg.com/developer/static/1404081138/console/base/img/func-icon.png");
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.lego-common-blockitem{
+    border: 1px dashed #fff;
+}
+
+.lego-common-blockitem:hover{
+    border-color: #3498db;
+}
+.lego-common-blockitem:hover .lego-common-delbtn{
+    display: block;
+}
+
+.lego-common-btn{
+    height: 30px;
+    background-color: #5D9CEC;
+    color: #FFF;
+    border: none;
+    font-weight: bolder;
+    padding: 0 20px;
+    margin: 0 7px;
+    border-radius: 0;
+}
+.lego-common-btn-cancel{
+    background-color: #D0D4D9 !important;
+}
+
+.lego-common-delbtn{
+    display: none;
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    background: url(/cptlib/lego/contact/images/del-btn.png) no-repeat;
+    position: absolute;
+    right: 14px;
+    top: 18px;
+    cursor: pointer;
+}
+
+.lego-common-tips{
+    width: 80%;
+    position: fixed;
+    left: 10%;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
+    z-index: 20000;
+}
+
+.lego-common-errortip{
+    background-color: #fcdddd;
+    color: #333;
+    opacity: 0;
+}
+
+.lego-common-righttip{
+    background-color: #56a845;
+    opacity: 0;
+}
+.alert{
+    background-color: #56a845;
+    color: #fff;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding:10px 20px 10px 10px;
+    position:fixed;
+    width:300px;
+    top:0px;
+    left:50%;
+    margin-left:-150px;
+    display:none;
+}
+.alertError{
+    color: #333;
+    background-color: #fcdddd;
+}
+/*提示确认层*/
+#lgm-alter-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#lgm-alter-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 11000;
+}
+.lgm-alter-layout{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    z-index: 11010;
+    width: 200px;
+    padding: 10px;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.lgm-alter-t,.lgm-alter-t:after{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.lgm-alter-t{
+    top: -11px;
+    left: 10%;
+    border-bottom-color: rgba(0,0,0,0.25);
+    border-width: 11px;
+    border-top-width: 0;
+}
+.lgm-alter-t:after{
+    top: 1px;
+    margin-left: -10px;
+    border-bottom-color: #fff;
+    content: "";
+    border-width: 10px;
+    border-top-width: 0;
+}
+
+.lgm-alter-c{
+    /*
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAYAAAC5UQwxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFWSURBVEhL7ZaxagJBEIavS52X9FUUI4J9wMbqKps8QHoru0ObIDEYwilWgpDVz927BJldZ9ewVQZ+kNuZ+W7Gnb0tbtnbvPu4rgadj+qpPKs+y1yJZyU++LqwNFtX/d5mMTS71bM5fJXme/8iijV88CXGhevNVtSf7d/HIiAkYoglh0sXNt7wczkyx+1UTKgRseS4WW0Dk5KkKAilBVrY6+ShlbT+WxYqtJe+a9sYAyQnuR3GGmXHbJAYICJ321pmh+0sOfoUC0QwLnNKf5khycmnFCCMy3/JKREaakkpQBiwANaSQ0gpQAQLoLgY0h1A8w8UdS8w+6bJOxbZBz/laEtRe7RhWQ/vxrJ+njD6m/UDjFG2FqqRhSnvNdr2SiJWBWuMFtD3mI3UiBhivW0MGW/IdmaGQocDa/jgq67KZ8yOrfjnqk9ixG/37G+u+j4jcVryojgB6gnWgnuenLoAAAAASUVORK5CYII=") left top no-repeat;
+    padding-left: 40px;
+    */
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: #71767b;
+}
+.no-btn .lgm-alter-c{
+    padding-bottom: 0;
+}
+
+.lgm-alter-b{
+    text-align: center
+}
+
+
+
+.lgm-icon-selectWrap{
+position: relative;
+}
+
+.lgm-icon-selectIcon{
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px !important;
+    border-radius: 9px;
+    border: 1px solid #E7E7E7;
+    top: 12px;
+    top: 0;
+}
+
+.lgm-icon-selectMin{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 3px;
+}
+.lgm-icon-selected .lgm-icon-selectMin{
+    background-color: #5D9CEC;
+}
+body {
+    margin: 0;
+}
+.lego-contact input {
+    margin-left: 8px;
+    padding: 5px 8px;
+    line-height: 16px;
+}
+.lego-map-style {
+    height: 100px;
+}
+div.lego-contact-style.selected {
+    border:1px solid #5d9cec;
+}
+div.lego-contact-style {
+    border:1px solid #ffffff;
+    margin: 0 3px;
+    float: left;
+    cursor: pointer;
+}
+.lego-contact-style[data-contact-style="1"] .lego-contact-style-thumb{
+    background-image: url("/cptlib/lego/contact/images/style1.png");
+}
+
+.lego-contact-style[data-contact-style="2"] .lego-contact-style-thumb{
+    background-image: url("/cptlib/lego/contact/images/style2.png");
+}
+.lego-contact-style-thumb{
+    width:150px;
+    height:53px;
+    border: solid 1px #dfdfdf;
+    border-radius: 1px;
+    margin: 5px;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.lego-contact-style-box {
+    height: 124px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.lego-contact-save-btn{
+    position: relative;
+    bottom: 8px;
+}</style>
+
+
+<div id="cp20778057415657864" class="lego-contact">
+    <div class="lego-title"><span>通讯录</span></div>
+    <div class="lego-outer-line">
+        <div class="lego-content">
+            <span>通讯名称<em>*</em></span><input type="text" placeholder="企业或个人名称" class="contact-name lego-val lego-required">
+        </div>
+        <div class="lego-content">
+            <span>电话号码<em>*</em></span><input type="text" placeholder="手机或座机号码" class="contact-phone lego-val lego-required">
+        </div>
+        <div class="lego-content">
+            <span>常用邮箱&nbsp;&nbsp;&nbsp;</span><input type="text" placeholder="电子邮箱" class="contact-email lego-val">
+        </div>
+        <div class="lego-content">
+            <span>QQ号码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" placeholder="QQ" class="contact-IM lego-val">
+        </div>
+    </div>
+
+</div>
+
+<div id="LegoMapLayout" data-cptid="cp20778057415657864" data-appid="881131" data-cptname="contact" data-plugid="contact" data-pkgname="lego">
+    <div class="lego-outer-line">
+        <div class="lego-content">
+            <span>通讯地址&nbsp;&nbsp;&nbsp;</span>
+
+            <select id="contactP_0" class="lego-map-select">
+                <option value="">选择省份</option><option value="北京市">北京市</option><option value="天津市">天津市</option><option value="河北省">河北省</option><option value="山西省">山西省</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="上海市">上海市</option><option value="江苏省">江苏省</option><option value="浙江省">浙江省</option><option value="安徽省">安徽省</option><option value="福建省">福建省</option><option value="江西省">江西省</option><option value="山东省">山东省</option><option value="河南省">河南省</option><option value="内蒙古自治区">内蒙古自治区</option><option value="黑龙江省">黑龙江省</option><option value="湖北省">湖北省</option><option value="湖南省">湖南省</option><option value="广东省">广东省</option><option value="广西壮族自治区">广西壮族自治区</option><option value="海南省">海南省</option><option value="四川省">四川省</option><option value="重庆市">重庆市</option><option value="台湾省">台湾省</option><option value="贵州省">贵州省</option><option value="云南省">云南省</option><option value="西藏自治区">西藏自治区</option><option value="陕西省">陕西省</option><option value="甘肃省">甘肃省</option><option value="青海省">青海省</option><option value="宁夏回族自治区">宁夏回族自治区</option><option value="新疆维吾尔族自治区">新疆维吾尔族自治区</option><option value="香港特别行政区">香港特别行政区</option><option value="澳门特别行政区">澳门特别行政区</option><option value="海外">海外</option></select>
+                <select id="contactC_0" class="lego-map-select"><option value="">选择市</option></select>
+                <select id="contactA_0" class="lego-map-select"><option value="">选择区</option></select>
+                <input type="hidden" class="hidden" value="@|@|@|" id="contactReg_0">
+
+            </div>
+            <div class="lego-content">
+                <span style="visibility:hidden;">街道地址<em>*</em></span>
+                <input class="lego-val" id="streeName" type="text" value="" placeholder="详细地址">
+            </div>
+            <div style="margin:10px auto;margin-left: 72px;">
+        <a href="#" class="lego-map-link toshowMap">重新定位地图</a>
+        <span class="senErro" style="color:red;font-size:12px"></span>
+    </div>
+</div>
+
+<div class="lego-title">
+    <span>展示样式</span>
+</div>
+<div class="lego-outer-line">
+    <div class="lego-content lego-contact-style-box">
+        <div class="lego-contact-style" data-contact-style="1">
+            <label>
+                <input type="radio" name="lego-contact-style" checked="checked">
+                <span>样式1</span>
+            </label>
+            <div class="lego-contact-style-thumb"></div>
+        </div>
+        <div class="lego-contact-style selected" data-contact-style="2">
+            <label>
+                <input type="radio" name="lego-contact-style" checked="checked">
+                <span>样式2</span>
+            </label>
+            <div class="lego-contact-style-thumb"></div>
+        </div>
+    </div>
+
+    <div class="tip_cover">
+        <div class="incloudMap">
+            <div id="map"></div>
+            <a id="closeMapDiv">×</a>
+        </div>
+    </div>
+    <div class="lego-show-tips">通讯录目前仅安装百度应用(5.3.2以上版本)的安卓设备支持添加保存，其他设备将作为“企业通讯录”纯展示。</div>
+    <div>
+        <div class="lego-save-btn lego-contact-save-btn" id="LegoMapSave">保存</div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script><script type="text/javascript" src="http://api.map.baidu.com/getscript?v=1.3&amp;ak=&amp;services=&amp;t=20140929064447"></script><link rel="stylesheet" type="text/css" href="http://api.map.baidu.com/res/13/bmap.css">
+<script type="text/javascript">
+    var mapData = { "address": "@|@|@|", "lng": null, "lat": null };
+</script>
+<script type="text/javascript" src="/cptlib/lego/base/js/areaInfo.min.js"></script>
+<script type="text/javascript" src="/cptlib/lego/contact/js/option.js"></script>
+<script type="text/javascript" src="/cptlib/lego/contact/js/map.js"></script>
+<script type="text/javascript">
+    try {
+        var option = JSON.parse('[]');
+    } catch (e) {
+        var option = {};
+    }
+</script>
+
+
+<script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</div></body></html>

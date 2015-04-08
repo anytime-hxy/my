@@ -1,0 +1,1177 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>列表设置</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            line-height: auto;
+        }
+        .btn{
+            border-radius: 2px;
+            padding:5px 20px;
+            margin-left: 21px;
+            font-size: 12px;
+        }
+        .btn:first-child{
+            margin-left: 0;
+        }
+        .btn-primary,.btn-primary:hover{
+            background: -webkit-linear-gradient(top,#5d9cec,#488add);
+            border: 1px solid #3b74bc;
+            border-radius: 2px;
+            color: #fff;
+            padding: 0 20px;
+            height: 30px;
+            line-height: 28px;
+        }
+        .btn-primary:hover{
+            opacity:.8;
+        }
+        .pl1-alert{
+            background-color: #56a845;
+            color: #fff;
+            border-radius: 2px;
+            padding:5px 20px 5px 10px;
+            position:fixed;
+            width:300px;
+            top:0px;
+            left:50%;
+            margin-left:-150px;
+            display:none;
+            text-align: center;
+	    font-size: 12px;
+            border: none;
+        }
+        .alertOk{
+            color: #fff;
+            background-color: #56a845;
+        }
+        .alertError{
+            color: #333;
+            background-color: #fcdddd;
+        }
+        /*提示确认层*/
+        .lgm-alter-layout{
+            position: absolute;
+            top: 200px;
+            left: 0;
+            z-index: 1010;
+            max-width: 200px;
+            padding: 10px;
+            text-align: left;
+            white-space: normal;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 6px;
+            background-clip: padding-box;
+        }
+        .lgm-alter-t,.lgm-alter-t:after{
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+        }
+        .lgm-alter-t{
+            top: -11px;
+            left: 50%;
+            border-bottom-color: rgba(0,0,0,0.25);
+            border-width: 11px;
+            border-top-width: 0;
+        }
+        .lgm-alter-t:after{
+            top: 1px;
+            margin-left: -10px;
+            border-bottom-color: #fff;
+            content: "";
+            border-width: 10px;
+            border-top-width: 0;
+        }
+
+        .lgm-alter-c{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAYAAAC5UQwxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFWSURBVEhL7ZaxagJBEIavS52X9FUUI4J9wMbqKps8QHoru0ObIDEYwilWgpDVz927BJldZ9ewVQZ+kNuZ+W7Gnb0tbtnbvPu4rgadj+qpPKs+y1yJZyU++LqwNFtX/d5mMTS71bM5fJXme/8iijV88CXGhevNVtSf7d/HIiAkYoglh0sXNt7wczkyx+1UTKgRseS4WW0Dk5KkKAilBVrY6+ShlbT+WxYqtJe+a9sYAyQnuR3GGmXHbJAYICJ321pmh+0sOfoUC0QwLnNKf5khycmnFCCMy3/JKREaakkpQBiwANaSQ0gpQAQLoLgY0h1A8w8UdS8w+6bJOxbZBz/laEtRe7RhWQ/vxrJ+njD6m/UDjFG2FqqRhSnvNdr2SiJWBWuMFtD3mI3UiBhivW0MGW/IdmaGQocDa/jgq67KZ8yOrfjnqk9ixG/37G+u+j4jcVryojgB6gnWgnuenLoAAAAASUVORK5CYII=") left top no-repeat;
+            padding-left: 40px;
+            padding-bottom: 10px;
+        }
+
+        .lgm-alter-b{
+            text-align: center
+        }
+        /*help*/
+        .lgm-help{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-position: -177px -79px;
+            background-image: url("http://apps.bdimg.com/developer/static/1404081138/console/base/img/func-icon.png");
+            margin-left: 5px;
+            position: relative;
+            top: 1px;
+        }
+        .popover-content {
+            font-size: 12px;
+            font-weight: normal;
+            padding: 5px;
+        }
+        input[type='text']{
+            border:solid #dfdfdf 1px;
+            height:26px;
+            padding:2px 5px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        }
+        select,.lgm-select{
+            -webkit-appearance: none;
+            -webkit-padding-end: 20px;
+            -webkit-padding-start:3px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAYAAAB8ZH1oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB4SURBVBhXY5g+b6nqgqWrzi5Zue4/Nrx01fr/85asXMPw6NEjzq079gcsWLryPTaFcxevvHPgyElLBhjYtHWnJ7rieYuX396797A+VAkCbNyy22Pu4uVvQNYB6dv79x8xgEphgu379nnPWbRixYGjpwyhQkDAwAAAUuZgvDQGNZ0AAAAASUVORK5CYII=');
+            background-position: 98% center;
+            background-repeat: no-repeat;
+            border-radius: 0;
+            border:solid #dfdfdf 1px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        }
+        /*滚动条样式*/
+        ::-webkit-scrollbar-track-piece{
+            background-color:#fff;
+            -webkit-border-radius:0;
+        }
+        ::-webkit-scrollbar{
+            width:8px;
+            height:8px;
+        }
+        ::-webkit-scrollbar-thumb{
+            height:50px;
+            background-color:#999;
+            -webkit-border-radius:4px;
+            outline:2px solid #fff;
+            outline-offset:-2px;
+            border: 2px solid #fff;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            height:50px;
+            background-color:#9f9f9f;
+            -webkit-border-radius:4px;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="list" style="zoom: 1;">
+
+
+<style type="text/css">
+html,body{
+}
+body{
+    font-family:"微软雅黑","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+.lgm-clist-inner>form{
+    display:-webkit-box;
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-box-align: stretch;
+}
+.lgm-clist-h{
+    font-size: 14px;
+    color:#a4a9ae;
+    font-weight:bold;
+    padding:10px 12px;
+}
+.lgm-clist-h.solid{
+    border-bottom: 1px solid #dfdfdf;
+}
+.lgm-f-group{
+    display:-webkit-box;
+    display:box;
+    padding:10px 12px;
+}
+.lgm-f-group label{
+    color:#a6a7ab;
+    font-weight:normal;
+    margin-right:10px; 
+    width:60px;
+    -webkit-box-flex: 1; 
+}
+.lgm-f-r{
+    display:block;
+    -webkit-box-flex: 1; 
+}
+
+.lgm-f-num{
+    width: 100%;
+}
+.lgm-f-text{
+    width: 100%;
+    position: relative;
+    padding:2px 7px;
+}
+.lgm-f-text:outline{
+    border: 1px solid #f00;
+}
+
+.lgm-f-li{
+    padding:3px;
+}
+.lgm-f-li:not(.add):hover,.lgm-f-li.selected{
+    background-color:#1E90FF;
+    cursor: pointer;
+    color:#fff;
+}
+.lgm-f-li.add{
+    border-top: solid  1px #ccc;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.lgm-f-li.add:before{
+    content:"+";
+}
+/*样式选择*/
+.lgm-clist-styles{
+    border-top: 1px solid #dfdfdf;
+    position:relative;
+    -webkit-box-flex:1;
+}
+.lgm-styles-bg{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: #000;
+    z-index: 999;
+    opacity: .1;
+    margin-left:-20px;
+    width:120%;
+}
+
+.lgm-clist-styles.open .lgm-styles-bg{
+    display:none;
+}
+
+.lgm-f-styles{
+    padding:10px;
+    -webkit-box-orient: vertical;
+-webkit-box-align: stretch;
+
+}
+.lgm-style{
+    position:relative;
+    border:2px solid #dbdcdc;
+    height:106px;
+    margin-bottom: 20px;
+    display:-webkit-box;
+    padding:8px;
+    padding-bottom: 12px;
+    border-radius: 2px;
+}
+.lgm-style.styled{
+    border-color:#72ad09;
+    
+}
+.lgm-style:after,.lgm-style.styled:after{
+    position:absolute;
+    content:"";
+    width:23px;
+    height:23px;
+    right:-1px;
+    bottom:-1px;
+    z-index: 111;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVEhLrZTNcYMwEIXTgltIC2nBLbgF1+IW3EJqSQP8HWC4cCAHZuCq7IMnW8AiBMqb+Q5I2m/ESvDx38my7CZ8C4ZD8cnz/C7CAlILp84H0jRNf11ptFykXyL90aQWLj0WKXwsRRpcHpYkST73duvCsv2wDWpvt2CpP7wJqsAHy7dzVgyo0BMjBtSsgx5rBUegah7eiqDDa5rGIH3fr+aoe6csy0vodbNiJEgug0EfSFVV1E4pimK1hsop0o7rcgGKsKu2bV9jSzGe3RoLtVM7ZGD2VwN1XVNhTNd1wWJA9XY7sPNhGKiaxycGo5iH6L0d2LUbHKa2zmWUi/ipTS6xb+D234fttToZS/DVOwNacug3egTsXJ2IJzN/ACk1zcncfkUAAAAASUVORK5CYII=") right bottom no-repeat;
+}
+.lgm-style.styled:after{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFASURBVEhLY6A2KFrHGVqwhnNV4VrO/1AhykHBGq40oIF3QYbCMFSKfAAytGANxztkQyk2vHg9lzHQ0DPYDIVhqFLSADBMO7AZho6hyokDBWvYlQi5FhlDtREG0GDAGra4MFQrfgBNCVgNwIeh2nEDcg0GYagR2AElBoMw1BhMAApjbBpIwVCjUAE0VRAVecvOpP0HgcvPNmPIQY1DgIot/ILEJjeYwSBAlOHEZpCePeb/v//6CDYYRFdtksBQAzUSAoDB4YKuAKQJ5Kod11rgYugGg/jIemAYaiwkOIACKKUaCE895A42BAROPVhMtMEgDDUad3CAXH7n9SGwYciAkMEgDDYYGol4UwfI1cgAFJnY1CFjsOGFazlmYpNExzAfIIc/PgwLa6ySlGKikx45GGg4acUoKRgY3tglKMec/wE/wk8neF96zwAAAABJRU5ErkJggg==");
+}
+.lgm-style-l{
+    margin-top: 4px;
+    margin-right: 11px;
+}
+.lgm-style-r{
+    -webkit-box-flex:1;
+}
+.num2 .lgm-style-r,
+.num3 .lgm-style-r{
+    position: relative;
+    margin-right: 30px;
+}
+.num2 .lgm-style-r:after,
+.num3 .lgm-style-r:after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    overflow: hidden;
+    border-right: 1px dotted rgba(255, 255, 255, 0.36);
+    display: block;
+    overflow: hidden;
+    top: 31px;
+    right: -24px;
+    bottom: 0;
+    background: url(/cptlib/lego/list/images/list_more.png) center center no-repeat;
+    background-size: 11px;
+    margin-top: -8px;
+}
+.num3 .lgm-style-r:after{
+    margin-top: -25px;
+}
+.lgm-tag{
+    font-size: 13px;
+    padding: 1px 5px;
+    text-align: center;
+    background-color:#eaecee;
+    color: #000;
+    -webkit-box-sizing:border-box;
+    border:1px #fff solid;
+    cursor:pointer;
+    position:relative;
+}
+.lgm-tag:not(.lgm-tag-t):not(.disabled):hover{
+    border:dashed 1px #299EFB!important;
+}
+.lgm-tag.disabled{
+    color:#ccc;
+}
+.lgm-tag-t{
+    color: #9c9c9c;
+    display:block;
+    /* font-weight: bolder; */
+    -webkit-background-size:8px;
+    background-color: #eaecee;;
+    position:relative;
+    margin-bottom: 5px;
+}
+.lgm-tag-i{
+    display:block;
+    width:72px;
+    height:72px;
+    color:#8F8F8F;
+    line-height: 74px;
+    border:solid 1px #ccc;
+    background:url(/cptlib/lego/list/images/img-space1.png) center center no-repeat;
+    background-size: 100% 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.num3 .lgm-tag-i{
+    background-image:url(/cptlib/lego/list/images/list-3-icon.jpg);
+}
+.lgm-tag-c{
+    display:block;
+    height: 40px;
+    line-height: 33px;
+    color:#9c9c9c;
+    position:relative;
+    border:solid 1px #ccc;
+    background-color: #FFF;
+    /* background-image: linear-gradient(transparent 50%,#fff 50%,#fff);
+    -webkit-background-size:4px; */
+}
+.lgm-tag-c:before{
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-14px;
+    margin-left:-55px;
+    content:" ";
+    display:inline-block;
+    width:23px;
+    height:28px;
+    background-image:url(/cptlib/lego/list/images/cont-p.png);
+    background-color: #DDDDDD;
+}
+.lgm-tag-i:after,.lgm-tag-c:after{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    bottom: 0px;
+    /* border: solid 1px #dfdfdf; */
+    padding: 1px;
+    background:#cacaca url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALCAYAAACgR9dcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVChTpZJrEcMgEISxgJZaiAUs1EItoCUWYiEWaqESILuXDQFK2h/5Zm6O415LJq4m5+xhMaX0hi8whr1w9CptQSKg4GPVFygf1LKDi2jZkxlmW+gV10RrlJwCJcJ5+EUxPQesjCsiJ/dQRaNEC3p1+XZzX2iyYYdM+pHsp70bh37qvw+2Nx7g4qGtlyg/qeUbva+RyCbdj3+SEb+LndsAFuzSCdYn1cIAAAAASUVORK5CYII=") center center no-repeat;
+    /* opacity:.4; */
+    /* box-shadow: inset 1px 1px 0px #FFF,inset -1px -1px 0px #FFF; */
+}
+.lgm-style.styled .lgm-tag-i.selected,.lgm-style.styled .lgm-tag-c.selected{
+    color:#000;
+    border-color: #5191E9;
+}
+.lgm-style.styled .lgm-tag-i.selected{
+    background-image:url(/cptlib/lego/list/images/img-space.png);
+}
+.num3.lgm-style.styled .lgm-tag-i.selected{
+    background-image:url(/cptlib/lego/list/images/list-3-icon-hover.jpg);
+}
+.lgm-style.styled .lgm-tag-c.selected:before{
+    background-color: #5192e9;
+}
+.lgm-style.styled .lgm-tag-i.selected:after,.lgm-style.styled .lgm-tag-c.selected:after{
+    background-color:#72ad09;
+}
+.lgm-tag-y{
+    font-size: 12px;
+    -webkit-background-size: 2px;
+    background-color: #F0F0F0;
+    background-image: none;
+    padding: 1px;
+    line-height: 14px;
+}
+.lgm-style.num1 .lgm-tag-y{    
+    margin-bottom:3px;
+    float: left;
+    width: 50%;
+}
+.lgm-style.num1 .lgm-tag-y:nth-of-type(2n){
+    border-right:1px solid #fff;
+}
+.lgm-style.num1 .lgm-tag-y:nth-of-type(2n+1){
+    border-right:1px solid #F0F0F0;
+}
+.lgm-style.num2 .lgm-tag-t{
+    margin-right:75px;
+    margin-right: 0;
+}
+.lgm-style.num2 .lgm-tag-y{
+    position:absolute;
+    padding: 2px 3px;
+}
+/*
+.lgm-style.num2 .lgm-tag-y:nth-child(3){
+    top: 2px;
+    right: 0px;
+    display: none;
+}
+.lgm-style.num2 .lgm-tag-y:nth-child(4){
+    top: 71px;
+}
+.lgm-style.num2 .lgm-tag-y:nth-child(5){
+    top:71px;
+    right:0px;
+}
+*/
+.lgm-style.num2 .lgm-tag-y:nth-child(3){
+    top: 71px;
+}
+.lgm-style.num2 .lgm-tag-y:nth-child(4){
+    top:71px;
+    right:0px;
+}
+.lgm-tags{
+    position: absolute;
+    top: 200px;
+    left: 0;
+    z-index: 1010;
+    width: 116px;
+    padding: 10px;
+    text-align: left;
+    white-space: normal;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.lgm-tags-t,.lgm-tags-t:after{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.lgm-tags-t{
+    top: -11px;
+    left: 50%;
+    border-bottom-color: rgba(0,0,0,0.25);
+    border-width: 11px;
+    border-top-width: 0;
+}
+.lgm-tags-t:after{
+    top: 1px;
+    margin-left: -10px;
+    border-bottom-color: #fff;
+    content: "";
+    border-width: 10px;
+    border-top-width: 0;
+}
+.lgm-tags-l{
+    display:block;
+    font-weight: normal;
+    padding:1px 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.lgm-tags-l>input{
+    -webkit-appearance: none;
+    margin-right: 5px;
+    margin-top: -1px;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    right: 0px;
+    bottom: 0px;
+    border: solid 2px #BBB7B7;
+    padding: 1px;
+    background: #ccc;
+    box-shadow: inset 1px 1px 0px #FFF,inset -1px -1px 0px #FFF;
+}
+.lgm-tags-l>input[checked='checked']{
+    background: #299EFB;
+}
+
+
+/*
+ * for style 3
+ * */
+.num3 .lgm-style-l{
+    margin-top: 2px;
+}
+
+.num3.lgm-style{
+    height: 128px;
+}
+
+.num3 .lgm-tag{
+    display: block;
+    margin-bottom: 2px;
+}
+.num3 .lgm-tag-i{
+    height: 102px;
+    width: 75px;
+    border-radius: 0;
+}
+
+.channel_manage {
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    display: block;
+    background: -webkit-linear-gradient(top, #5d9cec, #488add);
+    color: #fff;
+    font-size: 12px;
+    float: right;
+    margin: 0 12px 10px 0;
+    border-radius: 3px;
+    font-family: "宋体";
+}</style>
+
+
+<div class="lgm-clist-layout" id="LgmcListLayout">
+<div class="lgm-clist-inner clearfix">
+    <form id="LgmClistFrom">
+    <div class="lgm-clist-data">
+        <div class="lgm-clist-h solid">文章列表<span class="lgm-help" data-content="列表展示内容来源于频道，频道下文章发布可点击“完成”后进入“文章管理”发布即可。建议完成所有页面配置后再发布文章" data-placement="bottom"></span></div>
+        <div class="lgm-f-group">
+            <label for="changecolor">展示条数</label>
+            <div class="lgm-f-r">
+                <select class="lgm-f-num" name="showNum" id="LgmChangeNum">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+            </div>
+        </div>
+        <div class="lgm-f-group">
+            <label for="LgmDataSource">内容来源</label>
+            <div class="lgm-f-r dropdown">
+                <div id="LgmDataSource" data-toggle="dropdown" data-classid="cl19762301045875974" class="lgm-f-text lgm-select dropdown-toggle">教师团队</div>
+                <div class="lgm-f-ul dropdown-menu" id="LgmDataSelect" style="width:100%">
+                                        <div class="lgm-f-li selected" data-classid="cl19762301045875974">教师团队</div>
+                                        <div class="lgm-f-li " data-classid="cl19762301222149406">培训课程</div>
+                                        <div href="?control=manage&amp;caction=addclass&amp;plugid=pl1&amp;cptname=list&amp;cptid=cp20771653485340892&amp;token=HA1gre0hRA1XowTHzLj0JPqOUIG6KV1eE9lLE0xaZv-F*71P&amp;pkg=lego" class="lgm-alter lgm-f-li add" data-alter="{&quot;action&quot;:&quot;add_channel&quot;}">添加频道</div>
+                </div>
+            </div>
+        </div>
+        <a class="channel_manage" href="javascript:void(0);">管理文章&gt;&gt;</a>
+    </div>
+    <div class="lgm-clist-styles  open" id="LgmClistStyle">
+        <div class="lgm-styles-bg"></div>
+        <div class="lgm-clist-h">展示样式</div>
+        <div class="lgm-f-group lgm-f-styles" data-styled="2" id="LgmStyled">
+            <div class="lgm-style num2 styled" style="margin-right:0px;" data-styled="2" id="LgmStyled-2">
+                <div class="lgm-style-l">
+                    <span class="lgm-tag lgm-tag-i selected" title="选择图片">图片</span>
+                </div>
+                <div class="lgm-style-r">
+                   <span class="lgm-tag lgm-tag-t selected">标题</span>
+                    <span class="lgm-tag lgm-tag-c selected" title="内容简介">内容简介</span>
+                    <span class="lgm-tag lgm-tag-y" title="选择字段">教师职务</span>
+                    <span class="lgm-tag lgm-tag-y" title="选择字段">教授课程</span>
+                </div>
+            </div>
+
+            <div class="lgm-style num1 " data-styled="1" id="LgmStyled-1">
+                    <div class="lgm-style-l">
+                        <span class="lgm-tag lgm-tag-i selected" title="选择图片">图片</span>
+                    </div>
+                    <div class="lgm-style-r clear">
+                        <span class="lgm-tag lgm-tag-t  selected">标题</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">教师职务</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">教授课程</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                    </div>
+            </div>
+
+            <div class="lgm-style num3 " data-styled="3" id="LgmStyled-3">
+                    <div class="lgm-style-l">
+                        <span class="lgm-tag lgm-tag-i selected" title="选择图片">图片</span>
+                    </div>
+                    <div class="lgm-style-r clear">
+                        <span class="lgm-tag lgm-tag-t  selected">标题</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">教师职务</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">教授课程</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                        <span class="lgm-tag lgm-tag-y" title="选择字段">选择字段</span>
+                    </div>
+            </div>
+
+        </div>
+        <div class="lgm-f-group">
+            <button type="submit" class="lgm-clist-submit btn btn-primary btn-lg btn-block">保存</button>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+
+
+<script>
+    $(function () {
+        var runtime = window.runtime,
+            buildPostPack = runtime.buildPostPack,
+            getIds = runtime.getIds;
+
+        var token = runtime.getUrlParam('token');
+
+        function getIdInfo() {
+            var ids = {};
+            ids.cptId = "cp20771653485340892";
+            ids.appId = "881131";
+            ids.plugId = "pl1";
+            ids.pkgname = "lego";
+            return ids;
+        }
+
+        var ids = getIdInfo();
+
+        //后端数据
+        var opData = { "dataSource": { "appId": 881131, "classId": "cl19762301045875974", "classTitle": "\u6559\u5e08\u56e2\u961f", "cptData": [{ "cptName": "title", "plugId": "pl1", "tagName": "\u6807\u9898", "required": "1", "order": 0, "cptId": "cp19762300151836188" }, { "cptName": "pic", "plugId": "pl1", "tagName": "\u56fe\u7247", "required": "1", "order": 1, "cptId": "cp19762300472886904" }, { "cptName": "cont", "plugId": "pl1", "tagName": "\u6b63\u6587", "required": "1", "order": 2, "cptId": "cp19762300869015105" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u6559\u5e08\u804c\u52a1", "required": "0", "order": 3, "cptId": "cp19762300896024479" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u6559\u6388\u8bfe\u7a0b", "required": "0", "order": 4, "cptId": "cp19762300929746988" }], "option": { "permission": 1 }, "_ctime": 1413970301, "_mtime": 1413970301, "_isdelete": 0, "_key": "85f0c823631f8c7e-1413970301" }, "classData": { "cl19762301045875974": { "appId": 881131, "classId": "cl19762301045875974", "classTitle": "\u6559\u5e08\u56e2\u961f", "cptData": [{ "cptName": "title", "plugId": "pl1", "tagName": "\u6807\u9898", "required": "1", "order": 0, "cptId": "cp19762300151836188" }, { "cptName": "pic", "plugId": "pl1", "tagName": "\u56fe\u7247", "required": "1", "order": 1, "cptId": "cp19762300472886904" }, { "cptName": "cont", "plugId": "pl1", "tagName": "\u6b63\u6587", "required": "1", "order": 2, "cptId": "cp19762300869015105" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u6559\u5e08\u804c\u52a1", "required": "0", "order": 3, "cptId": "cp19762300896024479" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u6559\u6388\u8bfe\u7a0b", "required": "0", "order": 4, "cptId": "cp19762300929746988" }], "option": { "permission": 1 }, "_ctime": 1413970301, "_mtime": 1413970301, "_isdelete": 0, "_key": "85f0c823631f8c7e-1413970301" }, "cl19762301222149406": { "appId": 881131, "classId": "cl19762301222149406", "classTitle": "\u57f9\u8bad\u8bfe\u7a0b", "cptData": [{ "cptName": "title", "plugId": "pl1", "tagName": "\u6807\u9898", "required": "1", "order": 0, "cptId": "cp19762299242246688" }, { "cptName": "pic", "plugId": "pl1", "tagName": "\u56fe\u7247", "required": "1", "order": 1, "cptId": "cp19762300265536878" }, { "cptName": "cont", "plugId": "pl1", "tagName": "\u6b63\u6587", "required": "1", "order": 2, "cptId": "cp19762300660912398" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u8bfe\u7a0b\u65f6\u95f4", "required": "1", "order": 3, "cptId": "cp19762300355205514" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u8bfe\u7a0b\u4ef7\u683c", "required": "0", "order": 4, "cptId": "cp19762300739875252" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u76ee\u6807\u4eba\u7fa4", "required": 0, "order": "5", "cptId": "cp19762300237560962" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u4f18\u60e0\u6d3b\u52a8", "required": 0, "order": "6", "cptId": "cp19762299613064121" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u6388\u8bfe\u6559\u5e08", "required": 0, "order": "7", "cptId": "cp19762299541792542" }, { "cptName": "text", "plugId": "pl1", "tagName": "\u5b66\u5458\u8bc4\u8bba", "required": 0, "order": "8", "cptId": "cp19762299902795403" }], "option": { "permission": 1 }, "_ctime": 1413970301, "_mtime": 1413970301, "_isdelete": 0, "_key": "fe03f46271c92240-1413970301" } } },
+            oldOption = null;
+
+        var render = function (str, o) {
+            return str.replace(/\{([^{}]+)\}/gmi, function (match, name) {
+                return (o[name] === undefined) ? '' : o[name];
+            })
+        };
+        var layout = $('.lgm-clist-layout');
+        var $$ = function (select) {
+            return layout.find(select);
+        };
+        var $num = $("#LgmChangeNum");//数据展示条数选择
+        var $text = $("#LgmDataSource");//数据源
+        var $dataSel = $("#LgmDataSelect");//数据选择
+        var $styleBlock = $("#LgmClistStyle");//样式选择区域
+        var $styled = $("#LgmStyled");
+        var $style1 = $("#LgmStyled-1");
+        var $style2 = $("#LgmStyled-2");
+        var $style3 = $("#LgmStyled-3");
+        var classData = opData.classData || {};
+        var dataSource = opData.dataSource;
+        var cptId = ids.cptId;
+        var newData;
+        var newStyle;
+        /*var styles = [["title","pic","text","text","text","text","text","text"],["title","pic","cont","text","text","text"]];*/
+        var dsTpl = '<div class="lgm-f-group">\
+            <label for="LgmTag1">标签{n}</label>\
+            <div class="lgm-f-r">\
+                <select class="lgm-f-tag" name="tag{n}">\
+                <option value="0">选择字段</option>\
+                </select>\
+            </div>\
+        </div>';
+        if (!classData) return;
+        //改变标签
+        var findTag = function (cptData, cptName) {
+            var findCpt = [];
+            if (typeof cptName == "object" && cptName.length) {
+                for (var i = 0, len = cptData.length; i < len; i++) {
+                    if ($.inArray(cptData[i].cptName, cptName) != -1) {
+                        cptData[i].checked = false;
+                        findCpt.push(cptData[i]);
+                    }
+                }
+            } else {
+                for (var i = 0, len = cptData.length; i < len; i++) {
+                    if (cptData[i].cptName == cptName) {
+                        cptData[i].checked = false;
+                        findCpt.push(cptData[i]);
+                    }
+                }
+            }
+
+            return findCpt;
+        };
+        //选择自动弹层
+        var tagPopTpl = '<div class="lgm-tags">\
+                        <span class="lgm-tags-t"></span>\
+                        <div class="lgm-tags-b">\
+                        <label class="lgm-tags-l ellipsis" data-cptid="0"><input type="radio" name="0" />选择字段</label>\
+                        </div>\
+                    </div> ';
+        var tagLTpl = '<label class="lgm-tags-l" data-tagname="{tagName}" data-cptid="{cptId}"><input type="radio" name="{cptId}" />{tagName}</label>';
+        var tagPop = function (tar) {
+            var $tar = $(tar);
+            var t = tagPop;
+            var renders = function () {
+                var $pop = $(render(tagPopTpl));
+                t.cont = $pop.find('.lgm-tags-b');
+                t.tip = $pop.find('.lgm-tags-t');
+                t.cont.delegate(".lgm-tags-l", 'click', function (e) {
+                    var $me = $(this);
+                    var $tar = $(t.tar);
+                    var input = $me.children('input');
+                    if (input.attr('checked') !== "checked") {
+                        /*if($tar.data('cptid')!==undefined){
+                           t.cont.find('input[name='+$tar.data('cptid')+']').attr('checked',false);
+                        }
+                        input.attr('checked',"checked");
+                        if(!input.data('cptid')===0){
+                            input.attr('disabled',"disabled");
+                        }*/
+                        $tar.text($me.data('tagname') || $me.text()).data('cptid', $me.data('cptid'));
+                        $pop.hide();
+                    }
+                });
+                $('html').bind('click', function (e) {
+                    if ($(e.target).closest(".lgm-tags").length) return;
+                    $pop.hide();
+                });
+                $(window).bind('resize', function (e) {
+                    $pop.hide();
+                });
+                $pop.appendTo("body");
+                t.wrap = $pop;
+                t.changeData(newData.cptData);
+                t.isRender = true;
+            }
+            t.isRender || renders();
+            var offset = $tar.offset();
+            var wt = $tar.width();
+            var wp = t.wrap.width();
+            var bW = $(window).width();
+            var left = offset.left + wt / 2 - wp / 2 - 10;
+            var lv;
+            if ((lv = left + wp + 40 - bW) > 0) {
+                left = offset.left + wt - wp;
+            } else if (left < 0) {
+                left = 0;
+            }
+            t.tar = tar;
+            t.tip.css('left', offset.left - left + wt / 2 - 10);
+            t.wrap.css({
+                top: offset.top + $tar.height() + 11,
+                left: left
+            });
+            t.cont.find('input').removeAttr('disabled').removeAttr('checked');
+            /*$tar.parent().find('.lgm-tag-y').each(function(i,n){
+                var $n = $(n);
+                if($n.data('cptid')){
+                    var $i = t.cont.find('input[name='+$n.data('cptid')+']');
+                    $i.attr('checked',"checked").attr('disabled',"disabled");
+                }
+            });*/
+            if ($tar.data('cptid') != undefined) {
+                var $i = t.cont.find('input[name=' + $tar.data('cptid') + ']');
+                $i.attr('checked', "checked").attr('disabled', "disabled");
+            }
+            t.wrap.show();
+        };
+        tagPop.changeData = function (nData) {
+            var t = tagPop;
+            if (!t.cont) return;
+            var yCpt = findTag(nData || newData.cptData, ["text", "date", "number", "time"]);
+            t.cont.children().slice(1).remove();
+            for (var i = 0, len = yCpt.length; i < len; i++) {
+                if (yCpt[i].cptId) {
+                    $(render(tagLTpl, yCpt[i])).appendTo(t.cont);
+                }
+            }
+        }
+        var changeTags = (function () {
+            var styleTag = oldOption && oldOption.styleTag;
+            var yTag = false;
+            if (styleTag) {
+                switch (oldOption.styled + '') {
+                    case '1':
+                        yTag = styleTag.slice(2);
+                        break;
+                    case '2':
+                        yTag = styleTag.slice(3);
+                        break;
+                    case '3':
+                        yTag = styleTag.slice(2);
+                        break;
+                }
+            }
+            var $tt = $styled.find('.lgm-tag-t');
+            var $it = $styled.find('.lgm-tag-i');
+            var $ct = $styled.find('.lgm-tag-c');
+            var $yt1 = $style1.find('.lgm-tag-y');
+            var $yt2 = $style2.find('.lgm-tag-y');
+            var $yt3 = $style3.find('.lgm-tag-y');
+            return function () {
+                if (!newData) return;
+                var cptData = newData['cptData'];
+                var tCpt = findTag(cptData, "title")[0];
+                var iCpt = findTag(cptData, "pic")[0];
+                var cCpt = findTag(cptData, "cont")[0];
+                var yCpt = findTag(cptData, ["text", "date", "number", "time"]);
+                var isEdit = styleTag && newData.classId == dataSource.classId;
+                $tt.data('cptid', tCpt.cptId);
+                $it.data('cptid', iCpt.cptId).addClass('selected');
+                if (isEdit && styleTag[1] != iCpt.cptId) {
+                    $it.removeClass('selected');
+                }
+                $ct.data('cptid', cCpt.cptId).addClass('selected');
+                if (isEdit && oldOption.styled == "2" && styleTag[2] != cCpt.cptId) {
+                    $ct.removeClass('selected');
+                }
+                if (!yCpt.length) {
+                    $yt1.addClass('disabled');
+                    $yt2.addClass('disabled');
+                    $yt3.addClass('disabled');
+                } else {
+                    $yt1.removeClass('disabled');
+                    //if(yCpt.length<6) $yt1.slice(yCpt.length).addClass('disabled')
+                    $yt2.removeClass('disabled');
+                    $yt3.removeClass('disabled');
+                    if (isEdit && yTag) {
+
+                        var tmp_yts = [$yt1, $yt2, $yt3];
+                        var tmp_yt = tmp_yts[+oldOption.styled - 1];
+                        tmp_yts[+oldOption.styled - 1] = false;
+
+                        //console.log(yCpt.length, tmp_yts.length, tmp_yts);
+                        var test_count = 0;
+                        for (var i = 0, len = yCpt.length; i < len; i++) {
+
+                            for (var j = 0, jlen = tmp_yt.length; j < jlen; j++) {
+                                if (yTag[j] == yCpt[i].cptId) {
+                                    $(tmp_yt[j]).data('cptid', yTag[j]).text(yCpt[i].tagName);
+                                    //break;
+                                }
+                            }
+
+                            for (var ii = 0, tmp_len = tmp_yts.length; ii < tmp_len; ii++) {
+                                if (tmp_yts[ii]) {
+                                    tmp_yts[ii].each(function (iii, n) {
+                                        if (yCpt[iii]) {
+                                            $(n).data('cptid', yCpt[iii].cptId).text(yCpt[iii].tagName);
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    } else {
+                        $yt1.removeData("cptid").text("选择字段");
+                        $yt2.removeData("cptid").text("选择字段");
+                        $yt3.removeData("cptid").text("选择字段");
+                        $yt1.each(function (i, n) {
+                            if (yCpt[i]) {
+                                $(n).data('cptid', yCpt[i].cptId).text(yCpt[i].tagName);
+                            }
+                        });
+                        $yt2.each(function (i, n) {
+                            if (yCpt[i]) {
+                                $(n).data('cptid', yCpt[i].cptId).text(yCpt[i].tagName);
+                            }
+                        });
+                        $yt3.each(function (i, n) {
+                            if (yCpt[i]) {
+                                $(n).data('cptid', yCpt[i].cptId).text(yCpt[i].tagName);
+                            }
+                        });
+                    }
+                }
+            }
+        })();
+
+        $text.on("changeData", function (e, arg) {
+            var $t = $(this);
+            var $sel = $dataSel.find(".selected");
+            var classid = $sel.data("classid");
+            $t.data('classid', classid);
+            $t.text($sel.text());
+            if (classid != "") {
+                $styleBlock.addClass('open');
+                newData = classData[classid];
+                changeTags();
+                tagPop.changeData(newData.cptData);
+            }
+        });
+        $styled.on("changeStyle", function (e, arg) {
+            var $t = $(this);
+            var styled = (arg && $(arg).data('styled')) || $t.children('.styled').data('styled');
+            $t.data("styled", styled);
+            //改变样式触发事件
+        });
+        //自动触发changedata
+        if (dataSource && dataSource.length != 0) {
+            $text.trigger("changeData", true);
+        }
+
+        //事件绑定
+        !function () {
+            var $selected = $dataSel.find(".selected");
+            $dataSel.on("click", function (e) {
+                var $t = $(e.target);
+                if ($t.hasClass("add")) {
+                    //增加频道
+                } else if (!$t.hasClass('selected')) {
+                    $t.addClass('selected');
+                    $selected && $selected.removeClass('selected');
+                    $selected = $t;
+                    $text.trigger("changeData", $t);
+                }
+            });
+            $styled.delegate(".lgm-style", "click", function (e, isStop) {
+                if (isStop) e.stopPropagation();
+                var $tar = $(this);
+                if (!$tar.hasClass("styled")) {
+                    $styled.find('.styled').removeClass("styled");
+                    $tar.addClass("styled");
+                    $styled.trigger("changeStyle", $tar);
+                }
+            });
+            $styled.delegate(".lgm-tag-y", "click", function (e) {
+                e.stopPropagation();
+                var $t = $(this);
+                var $tp = $t.closest('.lgm-style');
+                !$tp.hasClass('styled') && $tp.trigger('click', true);
+                if ($t.hasClass('disabled')) return;
+                tagPop(this);
+                /*var input0 = tagPop.cont.find('input[name=0]');
+                if($t.data('cptid')===0){
+                    input0.attr('disabled',"disabled").attr('checked','checked');
+                }else{
+                    input0.removeAttr('checked');
+                }*/
+            });
+            $(".lgm-tag-i,.lgm-tag-c").click(function (e) {
+                $(this).toggleClass('selected');
+            });
+        }();
+        var getFromData = function () {
+            var option = {};
+            var source = $text.data('classid');
+            option.showNum = $num.val();
+            option.styled = $styled.data('styled');
+            option.styleTag = [];
+            var _styled = $("#LgmStyled-" + option.styled);
+            option.styleTag.push(_styled.find('.lgm-tag-t').data('cptid'));
+            option.styleTag.push(_styled.find('.lgm-tag-i.selected').data('cptid') || 0);
+            if (option.styled == 2) {
+                option.styleTag.push(_styled.find('.lgm-tag-c.selected').data('cptid') || 0);
+            }
+            _styled.find('.lgm-tag-y').each(function (i, v) {
+                var val = $(v).data('cptid');
+                option.styleTag.push(val || 0);
+            });
+            option.sourceClassid = source;
+            return buildPostPack(ids, option);
+        };
+        var success = function () {
+            $("body").trigger("showTip", ["提交成功", "alertOk"]);
+            window.parent.postMessage(
+            {
+                action: 'refresh',
+                cptid: ids.cptId
+            },
+            '*')
+        }
+        //表单提交
+        $("#LgmClistFrom").submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "?control=option&caction=edit&format=json&token=" + token,
+                data: getFromData(),
+                success: function (resp) {
+                    if (resp && resp[ids.cptId] && resp[ids.cptId]['errno'] == 0) {
+                        success()
+                    } else {
+                        $("body").trigger("showTip", ["提交出错,请重新提交", "alertError"]);
+                    }
+                },
+                error: function (data) {
+                    $("body").trigger("showTip", ["提交出错,请重新提交", "alertError"]);
+                }
+            });
+        });
+
+        // 文章管理跳转
+        $('.channel_manage').click(function () {
+            window.parent.postMessage({ action: 'manage_post' }, '*');
+        })
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        //简单模版
+        var render = function (str, o) {
+            var isObj = $.isPlainObject(o)
+            return str.replace(/\{([^{}]+)\}/gmi, function (match, name) {
+                return isObj ? ((o[name] === undefined) ? '' : o[name]) : (o || "");
+            })
+        };
+        //字数限制;
+        $("body").delegate("input[maxlength]", "keyup", function () {
+            var $t = $(this).css({
+                "padding-right": "40px",
+                "width": "100%"
+            });
+            var $p = $t.parent().css({
+                "position": "relative"
+            });
+            var maxlength = $t.attr('maxlength');
+            if (!$t.data('tip')) {
+                var $ti = $("<span><i style='color:#afafaf;font-style: normal;'>" + $t.val().length + "</i>/" + maxlength + "</span>").appendTo($p).css({
+                    "position": "absolute",
+                    "right": "4px",
+                    "top": "50%",
+                    "margin-top": "-10px",
+                    "height": "20px",
+                    "line-height": "20px",
+                    "color": "#ccc"
+                });
+                $t.data("tip", true);
+            } else {
+                $p.find('i').text($t.val().length);
+            }
+        });
+        $('input[maxlength]').trigger("keyup");
+        //消息提示
+        var $alter;
+        $('body').bind("showTip", function (e, text, alertType, time, fun) {
+
+            var html = '<div class="pl1-alert"><span class="alter-cont">' + text + '</span></div>';
+            $(".pl1-alert").remove();
+
+            $alter = $(html).appendTo("body");
+            $(".pl1-alert").addClass(alertType);
+
+            $alter.slideDown(300, function () {
+                setTimeout(function () {
+                    fun && fun();
+                    $alter.slideUp(300);
+                }, time || 1000);
+            });
+        });
+        //help提示
+        $('.lgm-help').hover(function () {
+            $(this).popover("show");
+        }, function () {
+            $(this).popover("hide");
+        });
+        //弹出层
+        $('.lgm-alter').bind('click', function (e) {
+            var $t = $(this);
+            var data = $t.data('alter');
+            var href, title;
+            if ((href = $t.attr('href'))) {
+                data.src = location.origin + location.pathname + href;
+                e.preventDefault();
+            };
+            if ((title = $t.attr('title') || $t.attr('data-original-title'))) {
+                data.title = title;
+            }
+            data.originSrc = location.href;
+            window.parent.postMessage(data, '*');
+        });
+        //自定义confirm提示层
+        var confirmTpl = '<div class="lgm-alter-layout">\
+        <span class="lgm-alter-t"></span>\
+        <div class="lgm-alter-inner">\
+            <div class="lgm-alter-c">\
+            </div>\
+        </div>\
+        <div class="lgm-alter-b">\
+            <button type="button" class="submit btn btn-primary">确定</button>\
+            <button type="button" class="cancle btn btn-default">取消</button>\
+        </div>\
+    </div>';
+        var iConfirm = function (obj) {
+            obj = obj || {};
+            var t = iConfirm;
+            var $tar = $(obj.tar);
+            var w = obj.width || 200;
+            var h = obj.height || "auto";
+            t.funOk = obj.funOk || function () { };
+            t.funCancel = obj.funCancel || function () { };
+            var renders = function () {
+                var $confirm = $(render(confirmTpl));
+                t.cont = $confirm.find('.lgm-alter-c');
+                var submit = $confirm.find('.submit');
+                var cancle = $confirm.find('.cancle');
+                t.tip = $confirm.find('.lgm-alter-t');
+                t.wrap = $confirm;
+                submit.click(function (e) {
+                    e.stopPropagation();
+                    t.funOk();
+                    t.hide();
+                });
+                cancle.click(function (e) {
+                    e.stopPropagation();
+                    t.funCancel();
+                    t.hide();
+                });
+
+                $('html').bind('click', function (e) {
+                    if ($(e.target).closest(".lgm-alter-layout").length) return;
+                    t.hide();
+                });
+                $('window').bind('resize', function (e) {
+                    t.hide();
+                });
+                $confirm.appendTo("body");
+                t.isRender = true;
+            }
+            t.isRender || renders();
+            t.cont.text(obj.text);
+            var offset = $tar.offset();
+            var bW = $(window).width();
+            var left = offset.left - w / 2 + 11;
+            var lv;
+            if ((lv = left + w - bW) > 0) {
+                left = left - lv;
+            } else if (left < 0) {
+                left = 0;
+            }
+            t.tip.css('left', offset.left - left);
+            t.wrap.css({
+                top: offset.top + $tar.height() + 11,
+                left: left,
+                width: w,
+                height: h
+            });
+            t.wrap.show();
+        }
+        iConfirm.hide = function (tar) {
+            iConfirm.wrap.hide();
+        }
+        window.iConfirm = iConfirm;
+    });
+</script>
+
+</body></html>

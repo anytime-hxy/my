@@ -1,0 +1,118 @@
+/* for rest */
+
+body, div, table, input, textarea {
+	margin: 0;
+	padding: 0;
+	color: #a4a9ae;
+	font-size: 12px;
+}
+a{
+	color: black;
+}
+
+.lego-cover-select{
+    margin:10px;
+}
+.lego-cover-select .lgm-icon-selectWrap{
+    display: inline-block;
+}
+.lego-cover-align-wrap .lgm-icon-selectWrap{
+    display: inline-block;
+}
+
+.lego-cover-image{
+}
+
+.lego-cover-upload{
+    position:relative;
+    background: url(/cptlib/lego/cover2/images/upload_icon.png) no-repeat;
+    background-size: 20px;
+    height: 100px;
+    width: 130px;
+    margin: 0 auto;
+    background-position: center 40%;
+    border: 1px solid #dfdfdf;
+    cursor: pointer;
+    line-height: 130px;
+    text-align: center;
+}
+
+.lego-cover-upload-pro{
+    background: none;
+    margin-top: -100px;
+}
+#lego-upload-process{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fafafa;
+    display: none;
+}
+#lego-upload-process-1{
+    height: 20px;
+    background-color: white;
+    margin-top: 40px;
+}
+.lego-cover-upload img{
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.lego-cover-line{
+    padding: 0 15px 0 15px;
+    margin: 10px 0 10px 0;
+}
+.lego-cover-select-wrap{
+    padding-left: 15px;
+}
+
+.lego-cover-align{
+    display: inline-block;
+    float: left;
+    line-height: 18px;
+    
+}
+
+.lego-cover-align-wrap{
+    margin-left: 60px;
+
+}
+.lego-cover-noheight{
+    margin:0;
+    padding:0;
+    height:0;
+}
+.lego-cover-contentWrap{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.lego-cover-save{
+    width: 92%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    bottom: 6px;
+}
+
+.lego-cover-toStyle{
+    color: #5d9cec;
+    cursor: pointer;
+}
+.lego-cover-custom-tip{
+    padding: 0 38px;
+    padding-top: 7px;
+    line-height: 21px;
+}

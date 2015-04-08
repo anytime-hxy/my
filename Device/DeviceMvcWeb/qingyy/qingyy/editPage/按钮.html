@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/js/jquery.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+</head>
+<body class="button">
+
+
+
+
+    <div id="LegoButtonLayout" data-pkgname="lego" data-cptid="cp20774672399374410" data-cptname="button" data-appid="881131" data-plugid="button">
+        <div class="lego-title">
+            <span>按钮信息</span>
+        </div>
+        <div>
+            <div class="lego-content lego-outer-line">
+                <span>按钮名称<em>*</em></span>
+                <input type="text" class="lego-val" id="LegobuttonVal" value="" placeholder="按钮标签">
+            </div>
+            <div class="lego-content lego-outer-line">
+                <span>按钮链接</span>
+                <div class="lego-beautify-select" id="LegoButtonTypeDiv" data="from">
+                    <span class="lego-select-text" id="LegoButtonType" data="from">链接来源
+                    </span>
+                    <span class="lego-select-btn" id="LegoButtonTypeSelectBtn">
+                        <i class="lego-select-icon"></i>
+                    </span>
+                    <ul class="lego-select-list" id="LegoButtonTypeSelectList" style="display: none">
+                        <li data="inner">站内链接</li>
+                        <li data="outer">站外链接</li>
+                        <li data="from">链接来源</li>
+                    </ul>
+                </div>
+
+                <div class="lego-beautify-select" id="LegoButtonPageDiv" style="">
+                    <span class="lego-select-text" id="LegoButtonPage" data="">链接页面	                </span>
+                    <span class="lego-select-btn" id="LegoButtonPageSelectBtn">
+                        <i class="lego-select-icon"></i>
+                    </span>
+                    <ul class="lego-select-list" id="LegoButtonPageSelectList" style="display: none">
+                        <li class="lgm-nav-newpage" id="LgmButtonNewPage">新建页面</li>
+                        <li data-pageid="pg19762301953051776">培训课程</li>
+                        <li data-pageid="pg19762301899476939">站点首页</li>
+                        <li data-pageid="pg19762301920606190">机构介绍</li>
+                        <li data-pageid="pg19762301973198199">教师团队</li>
+                    </ul>
+                </div>
+                <input type="text" class="lego-val" id="LegoButtonOutHref" style="display: none" value="">
+            </div>
+        </div>
+        <div class="lego-title">
+            <span>展现样式</span>
+        </div>
+        <div class="lego-outer-line lego-outer-hover">
+            <div class="lego-title-styles lego-title-newStyle">
+                <div class="lego-title-style-item lego-button-style-item" data="style1">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">按钮样式1</span>
+                    <div class="lego-button-style1">按钮标签</div>
+                </div>
+                <div class="lego-title-style-item lego-button-style-item title-style-select" data="style2">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">按钮样式2</span>
+                    <div class="lego-button-style2">按钮标签</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="lego-save-btn" id="LegoButtonSave">保存</div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+    <script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</body>
+</html>

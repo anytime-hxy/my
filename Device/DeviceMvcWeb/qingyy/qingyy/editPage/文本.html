@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>组件设置界面</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+    <link href="/cptlib/lego/base/css/common.css?t=0518" rel="stylesheet" type="text/css">
+    <link href="/cptlib/lego/base/css/option.css?t=0518" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/cptlib/lego/base/js/runtime.js"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/lang/zh-cn/zh-cn.js" type="text/javascript" defer="defer"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/dialogs/link/link.js" type="text/javascript" defer="defer"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/dialogs/image/image.js" type="text/javascript" defer="defer"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/dialogs/map/map.js" type="text/javascript" defer="defer"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/dialogs/video/video.js" type="text/javascript" defer="defer"></script>
+    <script src="http://legoappcore.duapp.com/cptlib/lego/base/lib/umeditor/dialogs/emotion/emotion.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="text" spellcheck="false">
+
+
+    <link href="/cptlib/lego/base/lib/umeditor/themes/default/css/umeditor.min.css" type="text/css" rel="stylesheet">
+
+
+    <div id="LegoTextLayout" data-pkgname="lego" data-cptname="text" data-cptid="cp20766748345736958" data-appid="881131" data-plugid="pl0">
+        <div class="lego-title">
+            <span>文本信息</span>
+        </div>
+        <div class="lego-text-inner">
+            <div id="LgmEdit" style="width: 327px; min-height: 200px; z-index: 999;" class=" edui-body-container" contenteditable="true">
+                <p>
+                    <br>
+                </p>
+            </div>
+        </div>
+        <div class="lego-title">
+            <span>展开设置</span>
+        </div>
+        <div class="lego-outer-line">
+            <div class="lego-title-styles lego-text-styles">
+                <div class="lego-title-style-item title-style-select" data="style1">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">全部展示</span>
+                    <div class="lego-text-style1">
+                        <div class="lego-text-line"></div>
+                        <div class="lego-text-line"></div>
+                    </div>
+                </div>
+
+                <div class="lego-title-style-item " data="style2">
+                    <span class="lego-title-selectIcon">
+                        <div class="lego-title-selectIcon2"></div>
+                    </span>
+                    <span class="lego-title-tmptitle">缩略展示</span>
+                    <div class="lego-text-style2">
+                        <div class="lego-text-line"></div>
+                        <div class="lego-text-more"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="lego-save-btn" id="LegoTextSave">保存</div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" charset="utf-8" src="/cptlib/lego/base/lib/umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/cptlib/lego/base/lib/umeditor/umeditor.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var ue = UM.getEditor('LgmEdit', {
+                //toolbar:['underline strikethrough | undo redo | fontsize bold italic | link unlink'],
+                toolbar: [' bold italic underline strikethrough  | forecolor backcolor |',
+                    'justifyleft justifycenter justifyright justifyjustify |',
+                    'link unlink '],
+                initialFrameWidth: 334,
+                initialFrameHeight: 200,
+                imagePath: "http://",
+                focus: false
+            });
+            window.ue = ue;
+        });
+    </script>
+
+
+    <script type="text/javascript" src="/cptlib/lego/base/js/option.js?t=0518"></script>
+    <script type="text/javascript" src="/cptlib/lego/base/js/common.js?t=0518"></script>
+
+</body>
+</html>
